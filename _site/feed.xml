@@ -1,9 +1,9 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" xml:lang="en"><generator uri="https://jekyllrb.com/" version="4.2.2">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" hreflang="en" /><updated>2022-09-14T11:46:15-05:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">blank</title><subtitle>A simple, whitespace theme for academics. Based on [*folio](https://github.com/bogoli/-folio) design.
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" xml:lang="en"><generator uri="https://jekyllrb.com/" version="4.2.2">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" hreflang="en" /><updated>2022-09-14T12:45:09-05:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">blank</title><subtitle>A simple, whitespace theme for academics. Based on [*folio](https://github.com/bogoli/-folio) design.
 </subtitle><entry><title type="html">Causal inference can prevent computer vision from falling into black-box deep learning</title><link href="http://localhost:4000/blog/2022/22fallmath888/" rel="alternate" type="text/html" title="Causal inference can prevent computer vision from falling into black-box deep learning" /><published>2022-09-14T00:00:00-05:00</published><updated>2022-09-14T00:00:00-05:00</updated><id>http://localhost:4000/blog/2022/22fallmath888</id><content type="html" xml:base="http://localhost:4000/blog/2022/22fallmath888/"><![CDATA[<ul id="markdown-toc">
   <li><a href="#homework-1" id="markdown-toc-homework-1">Homework 1</a>    <ul>
       <li><a href="#who-am-i" id="markdown-toc-who-am-i">Who am I?</a></li>
       <li><a href="#what-is-my-professional-preparation-and-background" id="markdown-toc-what-is-my-professional-preparation-and-background">What is my professional preparation and background?</a></li>
-      <li><a href="#what-is-my-professional-interests-or-goals" id="markdown-toc-what-is-my-professional-interests-or-goals">What is my professional interests or goals?</a></li>
+      <li><a href="#what-are-my-professional-interests-or-goals" id="markdown-toc-what-are-my-professional-interests-or-goals">What are my professional interests or goals?</a></li>
       <li><a href="#why-am-i-interested-in-causal-inference" id="markdown-toc-why-am-i-interested-in-causal-inference">Why am I interested in causal inference?</a></li>
     </ul>
   </li>
@@ -41,17 +41,17 @@ I am especially interested in 3D scene understanding and self-supervised learnin
 
 <h3 id="what-is-my-professional-preparation-and-background">What is my professional preparation and background?</h3>
 
-<p>I am a Ph.D. student from computer science background. I am also interested in mathematics driven data science, 
-where math (will) become my minor. During most of my time, I use deep learing, the well-known black box but powerful
+<p>I am a Ph.D. student with a computer science background. I am also interested in mathematics-driven data science, 
+where math (will) become my minor. Most of the time, I use deep learning, the well-known black box but powerful
 tool, to empirically improve the performance of computer vision problems.</p>
 
-<h3 id="what-is-my-professional-interests-or-goals">What is my professional interests or goals?</h3>
+<h3 id="what-are-my-professional-interests-or-goals">What are my professional interests or goals?</h3>
 <p>I am passionate about solving 
 <strong>real world</strong> problems that better serve people, such as 3D perception in autonomous driving.
-However, current deep learning based  approaches may not reveal
- the underline relationship of objects and label. For example, recently studies found that
- the unrelavant background could be the informative features when recognnizing the foreground objects,
- know as <a href="http://lgmoneda.github.io/2021/01/12/spurious-correlation-ml-and-causality.html">supurious correlation</a>.</p>
+However, current deep learning-based approaches may not reveal
+ the underline relationship between objects and labels. For example, recent studies found that
+ the irrelevant background could be an informative feature when recognizing the foreground objects,
+ known as <a href="http://lgmoneda.github.io/2021/01/12/spurious-correlation-ml-and-causality.html">supurious correlation</a>.</p>
 
 <div class="row mt-3">
     <div class="col-sm mt-3 mt-md-0">
@@ -76,11 +76,10 @@ However, current deep learning based  approaches may not reveal
     </div>
 </div>
 
-<p>A straightforward idea is: can we use the well-established causal inference to
-help improve the reliability of deep learning?</p>
+<p>A straightforward idea is: can we use the well-established causal inference to help improve the reliability of deep learning?</p>
 
 <h3 id="why-am-i-interested-in-causal-inference">Why am I interested in causal inference?</h3>
-<p>Therefore, causal inference may provide us a way to build a interpretable 
+<p>Therefore, the causal inference may provide us with a way to build an interpretable 
 computer vision framework. Other areas, such as vision-question-answering (VQA),
-can also be equiped with causal inference to  improve both final performance and 
+can also be equipped with causal inference to improve both final performance and 
 interpretation.</p>]]></content><author><name></name></author><category term="vision," /><category term="ML," /><category term="math" /><summary type="html"><![CDATA[UW-Madison 2022Fall MATH888 Project, Mu Cai]]></summary></entry></feed>
