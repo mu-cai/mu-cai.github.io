@@ -14,6 +14,22 @@
     <meta name="description" content="* indicates equal contribution." />
     <meta name="keywords" content="jekyll, jekyll-theme, academic-website, portfolio-website" />
 
+    <!-- OpenGraph -->
+    <meta property="og:site_name" content="Mu  Cai" />
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="Mu  Cai | publications" />
+    <meta property="og:url" content="http://localhost:4000/publications/" />
+    <meta property="og:description" content="* indicates equal contribution." />
+    
+    <meta property="og:locale" content="en" />
+
+    <!-- Twitter card -->
+    <meta name="twitter:card" content="summary" />
+    <meta name="twitter:title" content="publications" />
+    <meta name="twitter:description" content="* indicates equal contribution." />
+    
+    
+
 
     <!-- Bootstrap & MDB -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha256-DF7Zhf293AJxJNTmh5zhoYYIMs2oXitRfBjY+9L//AY=" crossorigin="anonymous">
@@ -121,19 +137,25 @@
           <div class="author">
           
 
-          Mu Cai, and <a href="https://pages.cs.wisc.edu/~sharonli/" target="_blank" rel="noopener noreferrer">Yixuan Li</a>
+          <a href="https://mu-cai.github.io/" target="_blank" rel="noopener noreferrer">Mu Cai</a>, and <a href="https://pages.cs.wisc.edu/~sharonli/" target="_blank" rel="noopener noreferrer">Yixuan Li</a>
 </div>
 
           <!-- Journal/Book title and date -->
           <div class="periodical">
-            2023
+            <em>Winter Conference on Applications of Computer Vision (WACV)</em> 2023
           </div>
         
           <!-- Links/Buttons -->
           <div class="links">
+            <a class="abstract btn btn-sm z-depth-0" role="button">Abs</a>
+            <a href="https://arxiv.org/abs/2208.09083" class="btn btn-sm z-depth-0" role="button" target="_blank" rel="noopener noreferrer">PDF</a>
+            <a href="https://github.com/mu-cai/FRL" class="btn btn-sm z-depth-0" role="button" target="_blank" rel="noopener noreferrer">Code</a>
           </div>
 
-          
+          <!-- Hidden abstract block -->
+          <div class="abstract hidden">
+            <p>Modern deep generative models can assign high likelihood to inputs drawn from outside the training distribution, posing threats to models in open-world deployments. While much research attention has been placed on defining new test-time measures of OOD uncertainty, these methods do not fundamentally change how deep generative models are regularized and optimized in training. In particular, generative models are shown to overly rely on the background information to estimate the likelihood. To address the issue, we propose a novel frequency-regularized learning FRL framework for OOD detection, which incorporates high-frequency information into training and guides the model to focus on semantically relevant features. FRL effectively improves performance on a wide range of generative architectures, including variational auto-encoder, GLOW, and PixelCNN++. On a new large-scale evaluation task, FRL achieves the state-of-the-art performance, outperforming a strong baseline Likelihood Regret by 10.7% (AUROC) while achieving 147× faster inference speed. Extensive ablations show that FRL improves the OOD detection performance while preserving the image generation quality.</p>
+          </div>
         </div>
       </div>
 </li></ol>
@@ -154,7 +176,7 @@
           <div class="author">
           
 
-          Xuefeng Du, Zhaoning Wang, Mu Cai, and <a href="https://pages.cs.wisc.edu/~sharonli/" target="_blank" rel="noopener noreferrer">Yixuan Li</a>
+          Xuefeng Du, Zhaoning Wang, <a href="https://mu-cai.github.io/" target="_blank" rel="noopener noreferrer">Mu Cai</a>, and <a href="https://pages.cs.wisc.edu/~sharonli/" target="_blank" rel="noopener noreferrer">Yixuan Li</a>
 </div>
 
           <!-- Journal/Book title and date -->
@@ -164,9 +186,15 @@
         
           <!-- Links/Buttons -->
           <div class="links">
+            <a class="abstract btn btn-sm z-depth-0" role="button">Abs</a>
+            <a href="https://arxiv.org/abs/2202.01197" class="btn btn-sm z-depth-0" role="button" target="_blank" rel="noopener noreferrer">PDF</a>
+            <a href="https://github.com/deeplearning-wisc/vos" class="btn btn-sm z-depth-0" role="button" target="_blank" rel="noopener noreferrer">Code</a>
           </div>
 
-          
+          <!-- Hidden abstract block -->
+          <div class="abstract hidden">
+            <p>Out-of-distribution (OOD) detection has received much attention lately due to its importance in the safe deployment of neural networks. One of the key challenges is that models lack supervision signals from unknown data, and as a result, can produce overconfident predictions on OOD data. Previous approaches rely on real outlier datasets for model regularization, which can be costly and sometimes infeasible to obtain in practice. In this paper, we present VOS, a novel framework for OOD detection by adaptively synthesizing virtual outliers that can meaningfully regularize the model’s decision boundary during training. Specifically, VOS samples virtual outliers from the low-likelihood region of the class-conditional distribution estimated in the feature space. Alongside, we introduce a novel unknown-aware training objective, which contrastively shapes the uncertainty space between the ID data and synthesized outlier data. VOS achieves competitive performance on both object detection and image classification models, reducing the FPR95 by up to 9.36% compared to the previous best method on object detectors. </p>
+          </div>
         </div>
       </div>
 </li>
@@ -184,7 +212,8 @@
           <div class="author">
           
 
-          Haotian Liu, Mu Cai, and Yong Jae Lee</div>
+          <a href="https://haotian-liu.github.io/" target="_blank" rel="noopener noreferrer">Haotian Liu</a>, <a href="https://mu-cai.github.io/" target="_blank" rel="noopener noreferrer">Mu Cai</a>, and <a href="https://pages.cs.wisc.edu/~yongjaelee/" target="_blank" rel="noopener noreferrer">Yong Jae Lee</a>
+</div>
 
           <!-- Journal/Book title and date -->
           <div class="periodical">
@@ -193,9 +222,21 @@
         
           <!-- Links/Buttons -->
           <div class="links">
+            <a class="abstract btn btn-sm z-depth-0" role="button">Abs</a>
+            <a href="https://arxiv.org/abs/2203.11183" class="btn btn-sm z-depth-0" role="button" target="_blank" rel="noopener noreferrer">PDF</a>
+            <a href="https://github.com/haotian-liu/MaskPoint" class="btn btn-sm z-depth-0" role="button" target="_blank" rel="noopener noreferrer">Code</a>
           </div>
 
-          
+          <!-- Hidden abstract block -->
+          <div class="abstract hidden">
+            <p>Masked autoencoding has achieved great success for self-supervised learning in
+   the image and language domains. However, mask based pretraining has yet to show benefits
+    for point cloud understanding, likely due to standard backbones like PointNet
+     being unable to properly handle the training versus testing distribution mismatch
+      introduced by masking during training. In this paper, we bridge this gap by proposing a 
+      discriminative mask pretraining Transformer framework, MaskPoint, for point clouds.
+       Our key idea is to represent the point cloud as discrete occupancy values (1 if part of the point cloud; 0 if not), and perform simple binary classification between masked object points and sampled noise points as the proxy task. In this way, our approach is robust to the point sampling variance in point clouds, and facilitates learning rich representations. We evaluate our pretrained models across several downstream tasks, including 3D shape classification, segmentation, and real-word object detection, and demonstrate state-of-the-art results while achieving a significant pretraining speedup (e.g., 4.1x on ScanNet) compared to the prior state-of-the-art Transformer baseline.</p>
+          </div>
         </div>
       </div>
 </li>
@@ -216,7 +257,8 @@
           <div class="author">
           
 
-          Mu Cai, Hong Zhang, Huijuan Huang, Qichuan Geng, <a href="https://pages.cs.wisc.edu/~sharonli/" target="_blank" rel="noopener noreferrer">Yixuan Li</a>, and Gao Huang</div>
+          <a href="https://mu-cai.github.io/" target="_blank" rel="noopener noreferrer">Mu Cai</a>, Hong Zhang, Huijuan Huang, Qichuan Geng, <a href="https://pages.cs.wisc.edu/~sharonli/" target="_blank" rel="noopener noreferrer">Yixuan Li</a>, and <a href="http://www.gaohuang.net/" target="_blank" rel="noopener noreferrer">Gao Huang</a>
+</div>
 
           <!-- Journal/Book title and date -->
           <div class="periodical">
@@ -225,9 +267,16 @@
         
           <!-- Links/Buttons -->
           <div class="links">
+            <a class="abstract btn btn-sm z-depth-0" role="button">Abs</a>
+            <a href="https://arxiv.org/abs/2011.13611" class="btn btn-sm z-depth-0" role="button" target="_blank" rel="noopener noreferrer">PDF</a>
+            <a href="https://github.com/mu-cai/frequency-domain-image-translation" class="btn btn-sm z-depth-0" role="button" target="_blank" rel="noopener noreferrer">Code</a>
+            <a href="https://www.conferenceharvester.com/uploads/harvester/presentations/YNCRXITS/YNCRXITS-PDF-1852362-1462712-1-PDF(1).pdf" class="btn btn-sm z-depth-0" role="button" target="_blank" rel="noopener noreferrer">Poster</a>
           </div>
 
-          
+          <!-- Hidden abstract block -->
+          <div class="abstract hidden">
+            <p>Image-to-image translation has been revolutionized with GAN-based methods. However, existing methods lack the ability to preserve the identity of the source domain. As a result, synthesized images can often over-adapt to the reference domain, losing important structural characteristics and suffering from suboptimal visual quality. To solve these challenges, we propose a novel frequency domain image translation (FDIT) framework, exploiting frequency information for enhancing the image generation process. Our key idea is to decompose the image into low-frequency and high-frequency components, where the high-frequency feature captures object structure akin to the identity. Our training objective facilitates the preservation of frequency information in both pixel space and Fourier spectral space. We broadly evaluate FDIT across five large-scale datasets and multiple tasks including image translation and GAN inversion. Extensive experiments and ablations show that FDIT effectively preserves the identity of the source image, and produces photo-realistic images. FDIT establishes state-of-the-art performance, reducing the average FID score by 5.6% compared to the previous best method.</p>
+          </div>
         </div>
       </div>
 </li></ol>
@@ -247,7 +296,8 @@
           <div class="author">
           
 
-          Liting Sun, Mu Cai, Wei Zhan, and Masayoshi Tomizuka</div>
+          Liting Sun*, <a href="https://mu-cai.github.io/" target="_blank" rel="noopener noreferrer">Mu Cai*</a>, <a href="https://zhanwei.site/" target="_blank" rel="noopener noreferrer">Wei Zhan</a>, and <a href="https://msc.berkeley.edu/people/tomizuka.html" target="_blank" rel="noopener noreferrer">Masayoshi Tomizuka</a>
+</div>
 
           <!-- Journal/Book title and date -->
           <div class="periodical">
@@ -256,9 +306,37 @@
         
           <!-- Links/Buttons -->
           <div class="links">
+            <a class="abstract btn btn-sm z-depth-0" role="button">Abs</a>
+            <a href="http://ras.papercept.net/images/temp/IROS/files/2174.pdf" class="btn btn-sm z-depth-0" role="button" target="_blank" rel="noopener noreferrer">PDF</a>
           </div>
 
-          
+          <!-- Hidden abstract block -->
+          <div class="abstract hidden">
+            <p>Interactive decision-making and motion planning
+are important to safety-critical autonomous agents, particularly
+when they interact with humans. Many different interaction
+strategies can be exploited by humans. For instance, they
+might ignore the autonomous agents, or might behave as selfish
+optimizers by treating the autonomous agents as opponents, or
+might assume themselves as leaders and the autonomous agents
+as followers who should take responsive actions. Different
+interaction strategies can lead to quite different closed-loop
+dynamics, and misalignment between the human’s policy and
+the autonomous agent’s belief over the policy will severely
+impact both safety and efficiency. Moreover, a human’s interaction policy can change as interaction goes on. Hence,
+autonomous agents need to be aware of such uncertainties on
+the human policy, and integrate such information into their
+decision-making and motion planning algorithms. In this paper,
+we propose a policy-aware interaction strategy based on game
+theory. The goal is to allow autonomous agents to estimate
+humans’ interactive policies and respond consequently. We
+validate the proposed algorithm with a roundabout scenario
+with real traffic data. The results show that the proposed
+algorithm can yield trajectories that are more similar to the
+ground truth than those with fixed policies. Also, we estimate
+how humans adjust their interaction strategies statistically
+based on the proposed algorithm.</p>
+          </div>
         </div>
       </div>
 </li></ol>
@@ -310,12 +388,12 @@ Last updated: September 14, 2022.
   <script defer src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
 
     <!-- Global site tag (gtag.js) - Google Analytics -->
-  <script async src="https://www.googletagmanager.com/gtag/js?id="></script>
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-XXXXXXXXX"></script>
   <script>
     window.dataLayer = window.dataLayer || [];
     function gtag(){ window.dataLayer.push(arguments); }
     gtag('js', new Date());
-    gtag('config', '');
+    gtag('config', 'UA-XXXXXXXXX');
   </script>
   </body>
 </html>

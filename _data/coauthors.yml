@@ -1,6 +1,25 @@
 "Li":
   - firstname: ["Yixuan", "Yixuan"]
     url: https://pages.cs.wisc.edu/~sharonli/
+"Cai":
+  - firstname: ["Mu", "Mu*"]
+    url: https://mu-cai.github.io/
+"Lee":
+  - firstname: ["Yong Jae", "Yong Jae*"]
+    url: https://pages.cs.wisc.edu/~yongjaelee/
+"Liu":
+  - firstname: ["Haotian", "Haotian*"]
+    url: https://haotian-liu.github.io/
+"Huang":
+  - firstname: ["Gao", "Gao*"]
+    url: http://www.gaohuang.net/
+"Tomizuka":
+  - firstname: ["Masayoshi", "Masayoshi*"]
+    url: https://msc.berkeley.edu/people/tomizuka.html
+"Zhan":
+  - firstname: ["Wei", "Wei*"]
+    url: https://zhanwei.site/
+
  
 "Adams":
   - firstname: ["Edwin", "E.", "E. P.", "Edwin Plimpton"]
