@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" xml:lang="en"><generator uri="https://jekyllrb.com/" version="4.2.2">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" hreflang="en" /><updated>2022-09-14T13:39:55-05:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">blank</title><subtitle>A simple, whitespace theme for academics. Based on [*folio](https://github.com/bogoli/-folio) design.
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" xml:lang="en"><generator uri="https://jekyllrb.com/" version="4.2.2">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" hreflang="en" /><updated>2022-09-14T17:12:19-05:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">blank</title><subtitle>A simple, whitespace theme for academics. Based on [*folio](https://github.com/bogoli/-folio) design.
 </subtitle><entry><title type="html">Causal inference can prevent computer vision from falling into black-box deep learning</title><link href="http://localhost:4000/blog/2022/22fallmath888/" rel="alternate" type="text/html" title="Causal inference can prevent computer vision from falling into black-box deep learning" /><published>2022-09-14T00:00:00-05:00</published><updated>2022-09-14T00:00:00-05:00</updated><id>http://localhost:4000/blog/2022/22fallmath888</id><content type="html" xml:base="http://localhost:4000/blog/2022/22fallmath888/"><![CDATA[<ul id="markdown-toc">
   <li><a href="#homework-1" id="markdown-toc-homework-1">Homework 1</a>    <ul>
       <li><a href="#who-am-i" id="markdown-toc-who-am-i">Who am I?</a></li>
@@ -11,9 +11,9 @@
 <h2 id="homework-1">Homework 1</h2>
 
 <h3 id="who-am-i">Who am I?</h3>
-<p>Currently, I am a third-year Ph.D. student in the  <a href="https://cs.wisc.edu/">Department of Computer Sciences</a>
+<p>My name is Mu Cai. Currently, I am a third-year Ph.D. student in the  <a href="https://cs.wisc.edu/">Department of Computer Sciences</a>
 at the <a href="https://www.wisc.edu/">University of Wisconsin- Madison</a>, supervised by <a href="https://pages.cs.wisc.edu/~yongjaelee/">Prof. Yong Jae Lee</a>. I got my bachelor’s degree in Electrical Engineering and Automation at Xi’an Jiaotong University in 2020. My research interest lies in the intersection of deep learning and computer vision. 
-I am especially interested in 3D scene understanding and self-supervised learning.</p>
+I am especially interested in 3D scene understanding and self-supervised learning. You can find more information <a href="https://mu-cai.github.io/">here</a>.</p>
 
 <div class="row mt-3">
     <div class="col-sm mt-3 mt-md-0">
