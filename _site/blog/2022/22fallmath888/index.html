@@ -18,7 +18,7 @@
     <meta property="og:site_name" content="Mu  Cai" />
     <meta property="og:type" content="website" />
     <meta property="og:title" content="Mu  Cai | Causal inference can prevent computer vision from falling into black-box deep learning" />
-    <meta property="og:url" content="http://localhost:4000/~mucai//blog/2022/22fallmath888/" />
+    <meta property="og:url" content="https://pages.cs.wisc.edu/~mucai//blog/2022/22fallmath888/" />
     <meta property="og:description" content="UW-Madison 2022Fall MATH888 Project, Mu Cai" />
     
     <meta property="og:locale" content="en" />
@@ -48,7 +48,7 @@
     <link rel="shortcut icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>⚓</text></svg>">
     
     <link rel="stylesheet" href="/~mucai/assets/css/main.css">
-    <link rel="canonical" href="http://localhost:4000/~mucai/blog/2022/22fallmath888/">
+    <link rel="canonical" href="https://pages.cs.wisc.edu/~mucai/blog/2022/22fallmath888/">
     
     <!-- Dark Mode -->
     
@@ -141,13 +141,22 @@
       <li><a href="#why-am-i-interested-in-causal-inference" id="markdown-toc-why-am-i-interested-in-causal-inference">Why am I interested in causal inference?</a></li>
     </ul>
   </li>
+  <li>
+<a href="#homework-2" id="markdown-toc-homework-2">Homework 2</a>    <ul>
+      <li><a href="#what-question-do-you-want-to-answer-and-why-is-it-important-to-answer-it" id="markdown-toc-what-question-do-you-want-to-answer-and-why-is-it-important-to-answer-it">What question do you want to answer? And why is it important to answer it?</a></li>
+      <li><a href="#what-observed-or-unobserved-random-variables-are-needed-to-fully-model-the-problem" id="markdown-toc-what-observed-or-unobserved-random-variables-are-needed-to-fully-model-the-problem">What (observed or unobserved) random variables are needed to fully model the problem?</a></li>
+      <li><a href="#what-is-the-causal-effect-that-you-wish-to-study" id="markdown-toc-what-is-the-causal-effect-that-you-wish-to-study">What is the causal effect that you wish to study?</a></li>
+      <li><a href="#what-are-your-working-hypotheses-about-the-relationship-between-variables" id="markdown-toc-what-are-your-working-hypotheses-about-the-relationship-between-variables">What are your working hypotheses about the relationship between variables?</a></li>
+      <li><a href="#references" id="markdown-toc-references">References</a></li>
+    </ul>
+  </li>
 </ul>
 
 <h2 id="homework-1">Homework 1</h2>
 
 <h3 id="who-am-i">Who am I?</h3>
 <p>My name is Mu Cai. Currently, I am a third-year Ph.D. student in the  <a href="https://cs.wisc.edu/" target="_blank" rel="noopener noreferrer">Department of Computer Sciences</a>
-at the <a href="https://www.wisc.edu/" target="_blank" rel="noopener noreferrer">University of Wisconsin- Madison</a>, supervised by <a href="https://pages.cs.wisc.edu/~yongjaelee/" target="_blank" rel="noopener noreferrer">Prof. Yong Jae Lee</a>. I got my bachelor’s degree in Electrical Engineering and Automation at Xi’an Jiaotong University in 2020. My research interest lies in the intersection of deep learning and computer vision. 
+at the <a href="https://www.wisc.edu/" target="_blank" rel="noopener noreferrer">University of Wisconsin- Madison</a>, supervised by <a href="https://pages.cs.wisc.edu/~yongjaelee/">Prof. Yong Jae Lee</a>. I got my bachelor’s degree in Electrical Engineering and Automation at Xi’an Jiaotong University in 2020. My research interest lies in the intersection of deep learning and computer vision. 
 I am especially interested in 3D scene understanding and self-supervised learning. You can find more information <a href="https://mu-cai.github.io/" target="_blank" rel="noopener noreferrer">here</a>.</p>
 
 <div class="row mt-3">
@@ -217,6 +226,197 @@ computer vision framework. Other areas, such as vision-question-answering (VQA),
 can also be equipped with causal inference to improve both final performance and 
 interpretation.</p>
 
+<h2 id="homework-2">Homework 2</h2>
+
+<h3 id="what-question-do-you-want-to-answer-and-why-is-it-important-to-answer-it">What question do you want to answer? And why is it important to answer it?</h3>
+
+<!-- In modern computer vision,  -->
+<p>Deep learning has achieved great success in a wide spread of pattern recognition problems, including 
+computer vision <a href="#Ren_et_al_15">[Ren et al. 2015]</a>, natural language understanding, and reinforcement. However, deep neural networks have been criticized 
+as a “function approximator”, i.e., it doesn’t learn the true “intelligence”. Instead, neural networks 
+could just be a mapping from the feature to the label for the majority of samples. 
+Therefore, the under-represented groups may be incorrectly predicted in a biased way.
+ For example, here we consider a computer vision task called scene graph generation. We are given the objects and
+ their bounding boxes.</p>
+
+<div class="row justify-content-sm-center">
+    <div class="col-sm-8 mt-3 mt-md-0">
+<!-- <div class="row mt-3">
+    <div class="col-sm mt-3 mt-md-0"> -->
+  <!-- <div class="row">
+    <div class="col one"> -->
+        <figure>
+
+  <picture>
+    
+    <source class="responsive-img-srcset" media="(max-width: 480px)" srcset="/~mucai/assets/img/input-480.webp"></source>
+    <source class="responsive-img-srcset" media="(max-width: 800px)" srcset="/~mucai/assets/img/input-800.webp"></source>
+    <source class="responsive-img-srcset" media="(max-width: 1400px)" srcset="/~mucai/assets/img/input-1400.webp"></source>
+    
+
+    <!-- Fallback to the original file -->
+    <img src="/~mucai/assets/img/input.jpg" class="img-fluid rounded z-depth-1" width="auto" height="auto" data-zoomable="" onerror="this.onerror=null; $('.responsive-img-srcset').remove();">
+
+  </picture>
+
+</figure>
+
+    </div>
+</div>
+
+<p>We are supposed to generate a scene graph <a href="#Tang_et_al_20">[Tang et al. 2020]</a> that describes the relationship between the objects, as the 
+right figure shows in the below image. However, actually, we can only get the (left) biased scene graph where 
+the descriptions are vague and don’t represent the accurate action or location information. 
+For example, in the biased generations, there are a lot of words like “on, has, near”, instead of the 
+the correct descriptions like “behind, parked on”.</p>
+
+<div class="row justify-content-sm-center">
+    <div class="col-sm-0 mt-0 mt-md-0">
+<!-- <div class="row mt-3">
+    <div class="col-sm mt-3 mt-md-0"> -->
+  <!-- <div class="row">
+    <div class="col one"> -->
+        <figure>
+
+  <picture>
+    
+    <source class="responsive-img-srcset" media="(max-width: 480px)" srcset="/~mucai/assets/img/baised_prediction-480.webp"></source>
+    <source class="responsive-img-srcset" media="(max-width: 800px)" srcset="/~mucai/assets/img/baised_prediction-800.webp"></source>
+    <source class="responsive-img-srcset" media="(max-width: 1400px)" srcset="/~mucai/assets/img/baised_prediction-1400.webp"></source>
+    
+
+    <!-- Fallback to the original file -->
+    <img src="/~mucai/assets/img/baised_prediction.jpg" class="img-fluid rounded z-depth-1" width="auto" height="auto" data-zoomable="" onerror="this.onerror=null; $('.responsive-img-srcset').remove();">
+
+  </picture>
+
+</figure>
+
+    </div>
+</div>
+
+<p>Why could this happen? The major reason is that for the ease of annotation, most of the text descriptions 
+in the training set are composed of common words like “has, on, wearing”. Therefore, neural networks just 
+learn such common words, and may not reflect the underrepresented actions/relationships. Therefore, it is 
+important to correctly represent the scene graph using a proper inference scheme.</p>
+
+<div class="row justify-content-sm-center">
+    <div class="col-sm-8 mt-3 mt-md-0">
+<!-- <div class="row mt-3">
+    <div class="col-sm mt-3 mt-md-0"> -->
+  <!-- <div class="row">
+    <div class="col one"> -->
+        <figure>
+
+  <picture>
+    
+    <source class="responsive-img-srcset" media="(max-width: 480px)" srcset="/~mucai/assets/img/class_dist-480.webp"></source>
+    <source class="responsive-img-srcset" media="(max-width: 800px)" srcset="/~mucai/assets/img/class_dist-800.webp"></source>
+    <source class="responsive-img-srcset" media="(max-width: 1400px)" srcset="/~mucai/assets/img/class_dist-1400.webp"></source>
+    
+
+    <!-- Fallback to the original file -->
+    <img src="/~mucai/assets/img/class_dist.jpg" class="img-fluid rounded z-depth-1" width="auto" height="auto" data-zoomable="" onerror="this.onerror=null; $('.responsive-img-srcset').remove();">
+
+  </picture>
+
+</figure>
+
+    </div>
+</div>
+
+<p>Causal inference can be a great fit for this problem. Given the objects, how can we find 
+the proper relationship between them? We may use the intervention model or the counterfactual causality 
+to tackle this problem. We can also expand our analysis to other vision tasks like Vision-Question-Answer (VQA) <a href="#Wang_et_al_20">[Wang et al. 2020]</a>.
+I also plan to integrate language features into the framework to improve the final performance on tasks like scene graph generation.
+This approach can also improve the robustness of the interpretation ability of neural networks.</p>
+
+<h3 id="what-observed-or-unobserved-random-variables-are-needed-to-fully-model-the-problem">What (observed or unobserved) random variables are needed to fully model the problem?</h3>
+
+<p>Here we need 4 random variables to fully model our problem. They are all observed variables under
+ the current problem setting. Here \(I\) denotes the image, which can be represented as the high-level
+  semantic features from a feature extractor backbone. \(X\) denotes the object features, which are also 
+ the feature maps in the deep neural network. \(Z\) denotes the object labels. \(Y\) denotes the predicated logits.</p>
+
+<div class="row justify-content-sm-center">
+    <div class="col-sm-8 mt-3 mt-md-0">
+<!-- <div class="row mt-3">
+    <div class="col-sm mt-3 mt-md-0"> -->
+  <!-- <div class="row">
+    <div class="col one"> -->
+        <figure>
+
+  <picture>
+    
+    <source class="responsive-img-srcset" media="(max-width: 480px)" srcset="/~mucai/assets/img/graph-480.webp"></source>
+    <source class="responsive-img-srcset" media="(max-width: 800px)" srcset="/~mucai/assets/img/graph-800.webp"></source>
+    <source class="responsive-img-srcset" media="(max-width: 1400px)" srcset="/~mucai/assets/img/graph-1400.webp"></source>
+    
+
+    <!-- Fallback to the original file -->
+    <img src="/~mucai/assets/img/graph.png" class="img-fluid rounded z-depth-1" width="auto" height="auto" data-zoomable="" onerror="this.onerror=null; $('.responsive-img-srcset').remove();">
+
+  </picture>
+
+</figure>
+
+    </div>
+</div>
+
+<p>Here is a concrete example, where the nodes and links in DAG are clearly presented.</p>
+
+<div class="row justify-content-sm-center">
+    <div class="col-sm-8 mt-3 mt-md-0">
+<!-- <div class="row mt-3">
+    <div class="col-sm mt-3 mt-md-0"> -->
+  <!-- <div class="row">
+    <div class="col one"> -->
+        <figure>
+
+  <picture>
+    
+    <source class="responsive-img-srcset" media="(max-width: 480px)" srcset="/~mucai/assets/img/model_varaible-480.webp"></source>
+    <source class="responsive-img-srcset" media="(max-width: 800px)" srcset="/~mucai/assets/img/model_varaible-800.webp"></source>
+    <source class="responsive-img-srcset" media="(max-width: 1400px)" srcset="/~mucai/assets/img/model_varaible-1400.webp"></source>
+    
+
+    <!-- Fallback to the original file -->
+    <img src="/~mucai/assets/img/model_varaible.png" class="img-fluid rounded z-depth-1" width="auto" height="auto" data-zoomable="" onerror="this.onerror=null; $('.responsive-img-srcset').remove();">
+
+  </picture>
+
+</figure>
+
+    </div>
+</div>
+
+<h3 id="what-is-the-causal-effect-that-you-wish-to-study">What is the causal effect that you wish to study?</h3>
+<p>Here I want to study the Total Direct Effect <a href="#VanderWeele_et_al_13">[VanderWeele et al. 2020]</a> <a href="#Tang_et_al_20">[Tang et al. 2020]</a>.</p>
+
+\[T D E=Y_x(i)-Y_{\bar{x}, z}(i),\]
+
+<p>where \(Y_x(i)\) is the observed outcome. Here I would like to use counterfactual causality based on the intervention \(X=\bar{x}\) to conduct the analysis. 
+Thus the first term is from the original graph and the second
+one is from the counterfactual. Within this process, do-calculus is also introduced, e.g., \(do(X=\bar{x})\).</p>
+
+<h3 id="what-are-your-working-hypotheses-about-the-relationship-between-variables">What are your working hypotheses about the relationship between variables?</h3>
+
+<p>Here I am also working with DAG. From my problem setting, we know that all edges are directed, and there are no  cycles. 
+Therefore, we can say that it has a topological or causal ordering. Three assumptions in the potential outcome framework can also be applied here.</p>
+
+<hr>
+<h3 id="references">References</h3>
+<hr>
+<ul>
+  <li>
+<a name="Ren_et_al_15"></a> <strong>[Ren et al. 2015]</strong>  Ren, Shaoqing, Kaiming He, Ross Girshick, and Jian Sun “<em><a href="https://papers.nips.cc/paper/2015/file/14bfa6bb14875e45bba028a21ed38046-Paper.pdf" target="_blank" rel="noopener noreferrer">Faster r-cnn: Towards real-time object detection with region proposal networks</a></em>”, Advances in neural information processing systems 28 (2015)</li>
+  <li>
+<a name="Wang_et_al_20"></a> <strong>[Wang et al. 2020]</strong>  Wang, Tan, Jianqiang Huang, Hanwang Zhang, and Qianru Sun “<em><a href="https://openaccess.thecvf.com/content_CVPR_2020/papers/Wang_Visual_Commonsense_R-CNN_CVPR_2020_paper.pdf" target="_blank" rel="noopener noreferrer">Visual commonsense r-cnn</a></em>”, In Proceedings of the IEEE/CVF Conference on Computer Vision and Pattern Recognition, pp. 10760-10770. 2020</li>
+  <li>
+<a name="Tang_et_al_20"></a> <strong>[Tang et al. 2015]</strong>   Tang, Kaihua, Yulei Niu, Jianqiang Huang, Jiaxin Shi, and Hanwang Zhang”<em><a href="https://arxiv.org/abs/2002.11949" target="_blank" rel="noopener noreferrer">Unbiased scene graph generation from biased training</a></em>”, In Proceedings of the IEEE/CVF conference on computer vision and pattern recognition, pp. 3716-3725. 2020</li>
+  <li>
+<a name="VanderWeele_et_al_13"></a> <strong>[VanderWeele et al. 2013]</strong>   VanderWeele, Tyler J “<em><a href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC3563853/" target="_blank" rel="noopener noreferrer">A three-way decomposition of a total effect into direct, indirect, and interactive effects</a></em>“,Epidemiology (Cambridge, Mass.) 24, no. 2 (2013): 224.</li>
+</ul>
 
   </article><div id="disqus_thread"></div>
     <script type="text/javascript">
@@ -240,7 +440,7 @@ interpretation.</p>
     <footer class="fixed-bottom">
       <div class="container mt-0">
         © Copyright 2022 Mu  Cai. Powered by <a href="https://jekyllrb.com/" target="_blank" rel="noopener noreferrer">Jekyll</a> with <a href="https://github.com/alshedivat/al-folio" target="_blank" rel="noopener noreferrer">al-folio</a> theme. Hosted by <a href="https://pages.github.com/" target="_blank" rel="noopener noreferrer">GitHub Pages</a>. Photos from <a href="https://unsplash.com" target="_blank" rel="noopener noreferrer">Unsplash</a>.
-Last updated: September 21, 2022.
+Last updated: October 06, 2022.
       </div>
     </footer>
 
