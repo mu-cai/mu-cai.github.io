@@ -1,4 +1,0 @@
-User-agent: *
-Disallow:
-
-Sitemap: https://pages.cs.wisc.edu/~mucai//sitemap.xml
