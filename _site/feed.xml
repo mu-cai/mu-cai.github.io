@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" xml:lang="en"><generator uri="https://jekyllrb.com/" version="4.2.2">Jekyll</generator><link href="https://pages.cs.wisc.edu/~mucai/feed.xml" rel="self" type="application/atom+xml" /><link href="https://pages.cs.wisc.edu/~mucai/" rel="alternate" type="text/html" hreflang="en" /><updated>2022-10-06T01:41:49-05:00</updated><id>https://pages.cs.wisc.edu/~mucai/feed.xml</id><title type="html">blank</title><subtitle>A simple, whitespace theme for academics. Based on [*folio](https://github.com/bogoli/-folio) design.
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" xml:lang="en"><generator uri="https://jekyllrb.com/" version="4.2.2">Jekyll</generator><link href="https://pages.cs.wisc.edu/~mucai/feed.xml" rel="self" type="application/atom+xml" /><link href="https://pages.cs.wisc.edu/~mucai/" rel="alternate" type="text/html" hreflang="en" /><updated>2022-11-18T13:36:06-06:00</updated><id>https://pages.cs.wisc.edu/~mucai/feed.xml</id><title type="html">blank</title><subtitle>A simple, whitespace theme for academics. Based on [*folio](https://github.com/bogoli/-folio) design.
 </subtitle><entry><title type="html">Causal inference can prevent computer vision from falling into black-box deep learning</title><link href="https://pages.cs.wisc.edu/~mucai/blog/2022/22fallmath888/" rel="alternate" type="text/html" title="Causal inference can prevent computer vision from falling into black-box deep learning" /><published>2022-09-14T00:00:00-05:00</published><updated>2022-09-14T00:00:00-05:00</updated><id>https://pages.cs.wisc.edu/~mucai/blog/2022/22fallmath888</id><content type="html" xml:base="https://pages.cs.wisc.edu/~mucai/blog/2022/22fallmath888/"><![CDATA[<ul id="markdown-toc">
   <li><a href="#homework-1" id="markdown-toc-homework-1">Homework 1</a>    <ul>
       <li><a href="#who-am-i" id="markdown-toc-who-am-i">Who am I?</a></li>
@@ -11,6 +11,20 @@
       <li><a href="#what-observed-or-unobserved-random-variables-are-needed-to-fully-model-the-problem" id="markdown-toc-what-observed-or-unobserved-random-variables-are-needed-to-fully-model-the-problem">What (observed or unobserved) random variables are needed to fully model the problem?</a></li>
       <li><a href="#what-is-the-causal-effect-that-you-wish-to-study" id="markdown-toc-what-is-the-causal-effect-that-you-wish-to-study">What is the causal effect that you wish to study?</a></li>
       <li><a href="#what-are-your-working-hypotheses-about-the-relationship-between-variables" id="markdown-toc-what-are-your-working-hypotheses-about-the-relationship-between-variables">What are your working hypotheses about the relationship between variables?</a></li>
+    </ul>
+  </li>
+  <li><a href="#homework-3" id="markdown-toc-homework-3">Homework 3</a>    <ul>
+      <li><a href="#assumptions-made-for-identification-and-reasons" id="markdown-toc-assumptions-made-for-identification-and-reasons">Assumptions made for identification, and reasons</a></li>
+      <li><a href="#steps-needed-for-identification-and-justification-for-each-step" id="markdown-toc-steps-needed-for-identification-and-justification-for-each-step">Steps needed for identification and Justification for each step</a></li>
+      <li><a href="#interpretation-for-the-conclusions-from-the-identification-proof" id="markdown-toc-interpretation-for-the-conclusions-from-the-identification-proof">Interpretation for the conclusions from the identification proof</a></li>
+    </ul>
+  </li>
+  <li><a href="#homework-4" id="markdown-toc-homework-4">Homework 4</a>    <ul>
+      <li><a href="#what-algorithms-are-used-for-estimationimplementation" id="markdown-toc-what-algorithms-are-used-for-estimationimplementation">What algorithms are used for estimation/implementation?</a></li>
+      <li><a href="#what-steps-are-needed-for-estimationimplementation" id="markdown-toc-what-steps-are-needed-for-estimationimplementation">What steps are needed for estimation/implementation?</a></li>
+      <li><a href="#how-exactly-does-data-factor-into-estimationimplementation" id="markdown-toc-how-exactly-does-data-factor-into-estimationimplementation">How exactly does data factor into estimation/implementation?</a></li>
+      <li><a href="#the-resultsperformance-of-the-algorithm" id="markdown-toc-the-resultsperformance-of-the-algorithm">The results/performance of the algorithm?</a></li>
+      <li><a href="#appendix" id="markdown-toc-appendix">Appendix</a></li>
       <li><a href="#references" id="markdown-toc-references">References</a></li>
     </ul>
   </li>
@@ -268,6 +282,517 @@ one is from the counterfactual. Within this process, do-calculus is also introdu
 <p>Here I am also working with DAG. From my problem setting, we know that all edges are directed, and there are no  cycles. 
 Therefore, we can say that it has a topological or causal ordering. Three assumptions in the potential outcome framework can also be applied here.</p>
 
+<h2 id="homework-3">Homework 3</h2>
+
+<h3 id="assumptions-made-for-identification-and-reasons">Assumptions made for identification, and reasons</h3>
+<p>I will still use the causal graph depicted in Homework 2.</p>
+
+<p>Here we need 4 random variables to fully model our problem. They are all observed variables under
+ the problem setting. Here \(I\) denotes the image, which can be represented as the high-level
+  semantic features from a feature extractor backbone (which can be viewed as confounder). 
+  \(X\) denotes the object features, which also 
+  feature maps in the deep neural network (can be viewed as the treatment). 
+  \(Z\) denotes the object labels. \(Y\) denotes the predicated logits for object relationships
+  (can be viewed as the treatment effect).</p>
+
+<div class="row justify-content-sm-center">
+    <div class="col-sm-8 mt-3 mt-md-0">
+<!-- <div class="row mt-3">
+    <div class="col-sm mt-3 mt-md-0"> -->
+  <!-- <div class="row">
+    <div class="col one"> -->
+        <figure>
+
+  <picture>
+    
+    <source class="responsive-img-srcset" media="(max-width: 480px)" srcset="/~mucai/assets/img/graph-480.webp" />
+    <source class="responsive-img-srcset" media="(max-width: 800px)" srcset="/~mucai/assets/img/graph-800.webp" />
+    <source class="responsive-img-srcset" media="(max-width: 1400px)" srcset="/~mucai/assets/img/graph-1400.webp" />
+    
+
+    <!-- Fallback to the original file -->
+    <img src="/~mucai/assets/img/graph.png" class="img-fluid rounded z-depth-1" width="auto" height="auto" data-zoomable="" onerror="this.onerror=null; $('.responsive-img-srcset').remove();" />
+
+  </picture>
+
+</figure>
+
+    </div>
+</div>
+
+<p>As my previous causal graph shows, my graph is a directed acyclic graph (DAG), which satisfies two properties in its definition:
+(1) All edges are directed, and (2) There are no cycles.</p>
+
+<p>Here it satisfied three assumptions: consistency, SUTVA,  and exchangeability.
+The explanations are:</p>
+
+<p>(a) Consistency. The potential outcome if we were to assign intervention \(X\) (object features) 
+is exactly \(Y\) (object relationships in the scene), 
+i.e. \(Y=Y(X)\).</p>
+
+<p>(b) SUTVA (stable-unit value assumption). The mapping \(x \mapsto Y(x)\) is a well-defined function 
+from \({X}\) to the set of random variables (i.e.
+ real-valued measurable functions) defined on our probability space. Here \(x\) is object features.</p>
+
+<p>(c) Exchangeability. Potential outcomes (object relationships) \(Y(x)\) are independent from 
+the treatment assignment (here is object features) \(X\) for each \(x \in {X}\).</p>
+
+\[Y(x) \perp X, \quad x \in X\]
+
+<p>In our causal grapth, we also need to condition on \(I\) to let \(Y(x) \perp X\).</p>
+
+<p>Besides, the positivity (common support) can not be viewed as valid. This is because the object features are extracted from
+ an image feature extractor. Therefore, to do identification, I use the method of counter-factual to build such 
+ “pseudo” positivity.</p>
+
+<p>According to my explanation and the DAG visualization, the assumptions and claims are valid. 
+<!-- Here I also need the assumptions. --></p>
+
+<h3 id="steps-needed-for-identification-and-justification-for-each-step">Steps needed for identification and Justification for each step</h3>
+<p>Here I will use do calculus to build my intervention mode, which is used in the 
+single world intervention graphs.</p>
+
+\[do(X=\bar{x})\]
+
+<p>Here my intervention action denotes whether I use the original object features \({x}\) or whether I use 
+the counterfactual object features \(\bar{x}\), which is described in detail in the next subsection.</p>
+
+<p>After using the counterfactual object features \(\bar{x}\), which are the mean feature values across the dataset,
+we can get a graph like this</p>
+
+<div class="row justify-content-sm-center">
+    <div class="col-sm-5 mt-3 mt-md-0">
+<!-- <div class="row mt-3">
+    <div class="col-sm mt-3 mt-md-0"> -->
+  <!-- <div class="row">
+    <div class="col one"> -->
+        <figure>
+
+  <picture>
+    
+    <source class="responsive-img-srcset" media="(max-width: 480px)" srcset="/~mucai/assets/img/dash_counter-480.webp" />
+    <source class="responsive-img-srcset" media="(max-width: 800px)" srcset="/~mucai/assets/img/dash_counter-800.webp" />
+    <source class="responsive-img-srcset" media="(max-width: 1400px)" srcset="/~mucai/assets/img/dash_counter-1400.webp" />
+    
+
+    <!-- Fallback to the original file -->
+    <img src="/~mucai/assets/img/dash_counter.png" class="img-fluid rounded z-depth-1" width="auto" height="auto" data-zoomable="" onerror="this.onerror=null; $('.responsive-img-srcset').remove();" />
+
+  </picture>
+
+</figure>
+
+    </div>
+</div>
+
+<p>We can see the two dashed lines are removed from the original graph. This is because of the 
+basic components in the graph, using <strong>d-separation</strong>. \(X \rightarrow Z\) is a pair in a chain \(X \rightarrow Z \rightarrow Y\)  starting from \(X\), 
+and \(X \leftarrow I\) is a pair in a chain in a collider \(X \leftarrow I \rightarrow Y\) . When 
+conditioned on (controlling)
+the \(X\), then the following three casual relationships would be eliminated:
+<!-- \rightarrow Y  --></p>
+
+<p>(1) \(X \rightarrow Z\): \(X\) and \(Z\) would be independent given \(x\).</p>
+
+<p>(2) \(I \rightarrow X\). \(X\) and \(I\) would be independent given \(x\).</p>
+
+<p>(3) \(X \rightarrow Y\). \(X\) and \(Y\) would be independent given \(x\).</p>
+
+<p>We need to identify \(E[Y(x, i, z \mid X=x))]\).  The analysis can be done using a similar analysis in g-formula.</p>
+
+<p>Use <strong>Markov compatibility</strong> to get  \(Y(x, i, z \mid X=x) \perp X\), and</p>
+
+\[E[Y(x, i, z \mid X=x))] = E[Y(x, i, z)]\]
+
+<p>Use <strong>Markov compatibility</strong> to get  \(Y(x, i, z) \perp X, I, Z\), and</p>
+
+\[E[Y(x, i, z)] = E[Y(x, i, z) \mid X=x, I=i, Z=z]\]
+
+<p>Using <strong>consistency</strong>, we get</p>
+
+\[E[Y(x, i, z) \mid X=x, I=i, Z=z] = E[Y \mid X=x, I=i, Z=z]\]
+
+<!-- ### -->
+
+<h3 id="interpretation-for-the-conclusions-from-the-identification-proof">Interpretation for the conclusions from the identification proof</h3>
+<p>In class, we talk about the concept the ADE (average treatment effect). However,
+ we have a “fixed” variable for the object feature, and we want to study the effect 
+of each object feature <strong>for the corresponding image itself</strong>, not across the whole dataset. 
+Since every feature of the image is unique, then we can replace \(E[Y \mid X=x, I=i, Z=z]\) with \(Y(x, i, z)\).
+Therefore, we can use the method called counterfactual causality, which can replace \(X\) with
+ the zeros values or the mean feature values across the dataset, called \(\bar{x}\). Here we fix the value for the parents 
+ of  \(x\)  <a href="#VanderWeele_et_al_13">[VanderWeele et al. 2020]</a>, i.e., the overall image feature  \(i \in I\) and the object labels.
+   Thus we get \(Y(\bar{x}, i, z)\). There we can use 
+ the difference value of the original inference result \(Y(x, i, z)\) and the counterfactual inference results \(Y(\bar{x}, i, z)\) 
+ to show such a gap for the outcome \(Y\). Here \(Y\) follows a distribution for a discrete set, 
+ thus we can represent the true object relationship using \(y \in Y\) with the largest gap.</p>
+
+<p>To be more specific, total direct effect <a href="#VanderWeele_et_al_13">[VanderWeele et al. 2020]</a>  is:</p>
+
+\[T D E=Y(x, i, z)-Y(\bar{x}, i, z),\]
+
+<p>where \(Y(x, i, z)\) is the observed outcome.</p>
+
+<p>Then we can see how  \(Y\) would change under original object features \(x\) and the counterfactual features \(\bar{x}\). 
+For example, \(Y\) could be sampled from a set of object relationships such as “on”, “near”, and “sitting on”. Then the 
+resulting estimated object relationship would be the \(Y\) with maximum total direct effect(TDE).</p>
+
+<h2 id="homework-4">Homework 4</h2>
+
+<h3 id="what-algorithms-are-used-for-estimationimplementation">What algorithms are used for estimation/implementation?</h3>
+
+<p>I use a similar approach to matching, which is counterfactural anaylsis. 
+To be specific, I adopt the method of exact matching. Similar to what I did in Homework 3, I  re-emphasize the assumptions 
+I made for identification.</p>
+
+<p>As my previous causal graph shows, my graph is a directed acyclic graph (DAG), which satisfies two properties in its definition:
+(1) All edges are directed, and (2) There are no cycles.</p>
+
+<p>Here it satisfied three assumptions: consistency, SUTVA,  and exchangeability.
+The explanations are:</p>
+
+<p>(a) Consistency. The potential outcome if we were to assign intervention \(X\) (object features) 
+is exactly \(Y\) (object relationships in the scene), 
+i.e. \(Y=Y(X)\).</p>
+
+<p>(b) SUTVA (stable-unit value assumption). The mapping \(x \mapsto Y(x)\) is a well-defined function 
+from \({X}\) to the set of random variables (i.e.
+ real-valued measurable functions) defined on our probability space. Here \(x\) is object features.</p>
+
+<p>(c) Exchangeability. Potential outcomes (object relationships) \(Y(x)\) are independent from 
+the treatment assignment (here is object features) \(X\) for each \(x \in {X}\).</p>
+
+\[Y(x) \perp X, \quad x \in X\]
+
+<p>In our causal grapth, we also need to condition on \(I\) to let \(Y(x) \perp X\).</p>
+
+<h3 id="what-steps-are-needed-for-estimationimplementation">What steps are needed for estimation/implementation?</h3>
+
+<p>As methioned in Homework3, I use Total Direct Effect <a href="#VanderWeele_et_al_13">[VanderWeele et al. 2020]</a> <a href="#Tang_et_al_20">[Tang et al. 2020]</a> to characterize the casual effect.</p>
+
+<p>In class, we talk about the concept the ADE (average treatment effect). However,
+ we have a “fixed” variable for the object feature, and we want to study the effect 
+of each object feature <strong>for the corresponding image itself</strong>, not across the whole dataset. 
+Since every feature of the image is unique, then we can replace \(E[Y \mid X=x, I=i, Z=z]\) with \(Y(x, i, z)\).
+Therefore, we can use the method called counterfactual causality, which can replace \(X\) with
+ the zeros values or the mean feature values across the dataset, called \(\bar{x}\). Here we fix the value for the parents 
+ of  \(x\)  <a href="#VanderWeele_et_al_13">[VanderWeele et al. 2020]</a>, i.e., the overall image feature  \(i \in I\) and the object labels.
+   Thus we get \(Y(\bar{x}, i, z)\). There we can use 
+ the difference value of the original inference result \(Y(x, i, z)\) and the counterfactual inference results \(Y(\bar{x}, i, z)\) 
+ to show such a gap for the outcome \(Y\). Here \(Y\) follows a distribution for a discrete set, 
+ thus we can represent the true object relationship using \(y \in Y\) with the largest gap.</p>
+
+<p>To be more specific, total direct effect <a href="#VanderWeele_et_al_13">[VanderWeele et al. 2020]</a>  is:</p>
+
+\[T D E=Y(x, i, z)-Y(\bar{x}, i, z),\]
+
+<p>where \(Y(x, i, z)\) is the observed outcome.</p>
+
+<p>Then we can see how  \(Y\) would change under original object features \(x\) and the counterfactual features \(\bar{x}\). 
+For example, \(Y\) could be sampled from a set of object relationships such as “on”, “near”, and “sitting on”. Then the 
+resulting estimated object relationship would be the \(Y\) with maximum total direct effect(TDE).</p>
+
+<p>The concrete steps (pseudo-code) of algorithm:</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">def</span> <span class="nf">causal_inference_scene_graph</span><span class="p">(</span><span class="n">neural_network</span><span class="p">,</span> <span class="n">raw_image</span><span class="p">,</span> <span class="n">threshold</span> <span class="o">=</span> <span class="mf">0.2</span><span class="p">,</span> <span class="n">training</span><span class="o">=</span> <span class="bp">False</span><span class="p">,</span> <span class="n">loss_fn</span> <span class="o">=</span> <span class="n">CrossEntropy</span><span class="p">,</span> <span class="n">gt_relationship</span> <span class="o">=</span> <span class="bp">None</span><span class="p">,</span> <span class="n">use_TDE</span><span class="o">=</span><span class="bp">True</span><span class="p">):</span>
+    <span class="s">""" casuality estimation using total direct effect
+
+    Parameters
+    ----------
+    neural_network : convolution neural network trained by the object detection
+    objective. 
+    raw_image : tensor with shape [3, H, W]
+        Here 3 is the number of channles for the image, which is RGB,
+        H and W are the height and width of the image.
+    threshold: threshold value for the casaulity value. 
+    training: whether the model is in the training or validation stage.
+    gt_relationship: the ground truth human annotated object relationship (casual relationship) in the training stage.
+    use_TDE: whether we use use_TDE or not
+
+    Warnings
+    --------
+    This function can be utilized in both training and inference.
+
+    Returns
+    -------
+    causal_list : casuality estimation list with  shape [N, 2],
+
+    """</span>
+
+    <span class="c1"># Get the image feature I and the bounding boxes prerdicted by the neural network
+</span>    <span class="c1"># I is the tensor with shape [C, H', W']
+</span>    <span class="c1"># boundingboxes has the shape of [N, 4], where N is the number of 
+</span>    <span class="n">I</span><span class="p">,</span> <span class="n">boundingboxes</span><span class="p">,</span> <span class="n">Y</span><span class="p">,</span> <span class="n">Z</span> <span class="o">=</span> <span class="n">neural_network</span><span class="p">.</span><span class="n">backbone</span><span class="p">(</span><span class="n">raw_image</span><span class="p">)</span>
+    <span class="c1"># Get the object features by cropping the overall image features I using boundingboxes
+</span>    <span class="n">X</span> <span class="o">=</span> <span class="n">FeatureExtraction</span><span class="p">(</span><span class="n">I</span><span class="p">,</span> <span class="n">boundingboxes</span><span class="p">)</span>
+    <span class="c1"># Get object labels usingg label_prediction from the neural network
+</span>    <span class="n">Z</span> <span class="o">=</span> <span class="n">neural_network</span><span class="p">.</span><span class="n">label_prediction</span><span class="p">(</span><span class="n">X</span><span class="p">)</span>
+
+    <span class="k">if</span> <span class="n">use_TDE</span><span class="p">:</span>
+        <span class="c1"># get the counterfactual object feature representation by taking the average of all object features 
+</span>        <span class="n">mean_feature_value</span> <span class="o">=</span> <span class="n">torch</span><span class="p">.</span><span class="n">mean</span><span class="p">(</span><span class="n">X</span><span class="p">,</span> <span class="n">dim</span> <span class="o">=</span><span class="mi">0</span> <span class="p">)</span>
+        <span class="n">x_bar</span> <span class="o">=</span> <span class="n">mean_feature_value</span>
+
+    <span class="n">causal_list</span> <span class="o">=</span> <span class="p">[]</span>
+
+    <span class="c1"># we can detect many pairs of object, 
+</span>    <span class="k">for</span> <span class="n">x1</span><span class="p">,</span><span class="n">z1</span> <span class="ow">in</span> <span class="nb">zip</span><span class="p">(</span><span class="n">X</span><span class="p">,</span> <span class="n">Z</span><span class="p">):</span>
+        <span class="k">for</span> <span class="n">x2</span><span class="p">,</span><span class="n">z2</span> <span class="ow">in</span> <span class="nb">zip</span><span class="p">(</span><span class="n">X</span><span class="p">,</span> <span class="n">Z</span><span class="p">):</span>
+            <span class="c1"># concate two objects features x and their corrsponding labels z
+</span>            <span class="n">x</span> <span class="o">=</span> <span class="n">torch</span><span class="p">.</span><span class="n">cat</span><span class="p">([</span><span class="n">x1</span><span class="p">,</span> <span class="n">x2</span><span class="p">])</span>
+            <span class="n">z</span> <span class="o">=</span> <span class="n">torch</span><span class="p">.</span><span class="n">cat</span><span class="p">([</span><span class="n">z1</span><span class="p">,</span> <span class="n">z2</span><span class="p">])</span>
+            <span class="c1"># predict the effect using treatment, which is a vector in R^K, where K is the number of possible  
+</span>            <span class="n">Y</span> <span class="o">=</span> <span class="n">neural_network</span><span class="p">.</span><span class="n">object_relationship_prediction</span><span class="p">(</span><span class="n">I</span><span class="p">,</span> <span class="n">x</span><span class="p">,</span> <span class="n">z</span><span class="p">)</span>
+            <span class="c1"># if we are in the training stage, conduct gradient decent for the object_relationship_prediction branch.
+</span>            <span class="k">if</span> <span class="n">training</span><span class="p">:</span>
+                <span class="n">loss</span> <span class="o">=</span> <span class="n">loss_fn</span><span class="p">(</span><span class="n">gt_relationship</span><span class="p">,</span> <span class="n">Y</span><span class="p">)</span>
+                <span class="n">loss</span><span class="p">.</span><span class="n">backward</span><span class="p">()</span>
+            <span class="k">if</span> <span class="n">use_TDE</span><span class="p">:</span>
+                <span class="c1"># predict the counterfactual effect
+</span>                <span class="n">Y_bar</span> <span class="o">=</span> <span class="n">neural_network</span><span class="p">.</span><span class="n">object_relationship_prediction</span><span class="p">(</span><span class="n">I</span><span class="p">,</span> <span class="n">xbar</span><span class="p">,</span> <span class="n">z</span><span class="p">)</span>
+                <span class="c1"># get total direct effect
+</span>                <span class="n">TDE</span><span class="o">=</span><span class="n">Y</span><span class="o">-</span><span class="n">Y_bar</span>
+                <span class="c1"># if TDE is larger than a manually decided threshold, then add it to the output lits
+</span>                <span class="k">if</span> <span class="n">TDE</span><span class="o">&gt;</span><span class="n">threshold</span><span class="p">:</span>
+                    <span class="n">causal_list</span><span class="p">.</span><span class="n">append</span><span class="p">([</span><span class="n">z</span><span class="p">,</span> <span class="n">TDE</span><span class="p">.</span><span class="n">argmax</span><span class="p">()])</span>
+            <span class="k">else</span><span class="p">:</span>
+                <span class="c1"># use the normal object relationship using argmax
+</span>                <span class="n">causal_list</span><span class="p">.</span><span class="n">append</span><span class="p">([</span><span class="n">z</span><span class="p">,</span> <span class="n">Y</span><span class="p">.</span><span class="n">argmax</span><span class="p">()])</span>
+    
+    <span class="c1"># return the final causal relationship list
+</span>    <span class="k">return</span> <span class="n">causal_list</span>
+
+
+</code></pre></div></div>
+
+<h3 id="how-exactly-does-data-factor-into-estimationimplementation">How exactly does data factor into estimation/implementation?</h3>
+<p>I use the realworld 2D images with common objects to conduct causal reasoning.
+Specifically, I use the Visual Genome (VG) <a href="#Krishna_et_al_17">[Krishna et al. 2017]</a> dataset. The dataset   is composed
+of 108k images across 75k object categories and 37k predicate
+relationship. We split the overall dataset into the training set (70%) and test set (30%).</p>
+
+<p>As I mentioned in the previous section, during the inference stage, the input is just the raw
+image with \(I \in \mathbb{R}^{3\times H \times W}\), where \(H\) and \(W\) denotes the height and width 
+of the image, respectively.</p>
+
+<p>However, before the inference stage, we need a well trained model that can detect the objects and their 
+associated bounding boxes well. Nowadays, researcher mainly adopt neural networks, in particular, 
+convolution neural networks or transformers, to conduct 2D object detection. During such training stage,
+ we feed the \(I \in \mathbb{R}^{3\times H \times W}\) and the bounding boxes annotations \(B \in \mathbb{R}^{N \times 4}\), where \(N\) is the number of boxes, \(B_i\) denotes the upperleft and lower right coordinates for the specific box \(i\). In our context, <code class="language-plaintext highlighter-rouge">neural_network.backbone</code> would serve as the module to extract the bounding boxes. Here we use a pretrained MaskRCNN model.</p>
+
+<p>Besides, if we directly inference the object relationships using counterfacial resoning, the result would not be promising.
+Since scene graph generation problem aims at investigating the casual relationship for each image, we can annotate a bunch of 
+<strong>training</strong> samples, and use evaluate the performance under the test set. Therefore, we would also provide the causal relationship ground truth \(C \in \mathbb{R}^{M}\), here \(M\) denotes the number of casual relationships annotated by human. After training stage, <code class="language-plaintext highlighter-rouge">neural_network.object_relationship_prediction</code> would be ready to use for object relationship prediction, whether by normal softmax prediction or via causal inference (TDE).</p>
+
+<h3 id="the-resultsperformance-of-the-algorithm">The results/performance of the algorithm?</h3>
+<p>The results coorespond to our expectation.
+We evaluete the performance under the standard metrics in scene graph generation (SGG).</p>
+
+<p>For the theoretical or practical properties of the algorithm, since we are coundcting causal inference on the single image, 
+the consistency would be naturally satisfied. Bias would be a major consideration here. Since human annotators tend to use simple relationship to annotate the dataset, which could save their time, thus the vanilia causal inference results would highly lean towards the most frequency object relationship catogories. The algorithm would be efficient, due to the nature of the feed-forward neural network.</p>
+
+<p>Firstly, we show the results for an example image. For each detected bounding box, the index and the catogory are shown on the upperleft corner of the box.</p>
+
+<div class="row justify-content-sm-center">
+    <div class="col-sm-0 mt-0 mt-md-0">
+<!-- <div class="row mt-3">
+    <div class="col-sm mt-3 mt-md-0"> -->
+  <!-- <div class="row">
+    <div class="col one"> -->
+        <figure>
+
+  <picture>
+    
+    <source class="responsive-img-srcset" media="(max-width: 480px)" srcset="/~mucai/assets/img/9_test-480.webp" />
+    <source class="responsive-img-srcset" media="(max-width: 800px)" srcset="/~mucai/assets/img/9_test-800.webp" />
+    <source class="responsive-img-srcset" media="(max-width: 1400px)" srcset="/~mucai/assets/img/9_test-1400.webp" />
+    
+
+    <!-- Fallback to the original file -->
+    <img src="/~mucai/assets/img/9_test.jpg" class="img-fluid rounded z-depth-1" width="auto" height="auto" data-zoomable="" onerror="this.onerror=null; $('.responsive-img-srcset').remove();" />
+
+  </picture>
+
+</figure>
+
+    </div>
+</div>
+
+<p>Here we show the top 20 object relationships discovered by the normal argmax operation and our total direct effect casuality estimation.</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="o">**</span> <span class="n">Normal</span> <span class="p">(</span><span class="n">Vanilia</span><span class="p">)</span> <span class="n">argmax</span> <span class="n">estimation</span> <span class="o">**</span> 
+
+<span class="o">**************************************************</span>
+<span class="n">rel_labels</span> <span class="mi">0</span><span class="p">:</span> <span class="mi">1</span><span class="n">_man</span> <span class="o">=&gt;</span> <span class="n">wearing</span> <span class="o">=&gt;</span> <span class="mi">7</span><span class="n">_jacket</span><span class="p">;</span> <span class="n">score</span><span class="p">:</span> <span class="mf">0.48118364810943604</span>
+<span class="n">rel_labels</span> <span class="mi">1</span><span class="p">:</span> <span class="mi">6</span><span class="n">_man</span> <span class="o">=&gt;</span> <span class="n">wearing</span> <span class="o">=&gt;</span> <span class="mi">5</span><span class="n">_pant</span><span class="p">;</span> <span class="n">score</span><span class="p">:</span> <span class="mf">0.46438875794410706</span>
+<span class="n">rel_labels</span> <span class="mi">2</span><span class="p">:</span> <span class="mi">1</span><span class="n">_man</span> <span class="o">=&gt;</span> <span class="n">wearing</span> <span class="o">=&gt;</span> <span class="mi">11</span><span class="n">_pant</span><span class="p">;</span> <span class="n">score</span><span class="p">:</span> <span class="mf">0.42527636885643005</span>
+<span class="n">rel_labels</span> <span class="mi">3</span><span class="p">:</span> <span class="mi">6</span><span class="n">_man</span> <span class="o">=&gt;</span> <span class="n">wearing</span> <span class="o">=&gt;</span> <span class="mi">8</span><span class="n">_shirt</span><span class="p">;</span> <span class="n">score</span><span class="p">:</span> <span class="mf">0.39771541953086853</span>
+<span class="n">rel_labels</span> <span class="mi">4</span><span class="p">:</span> <span class="mi">6</span><span class="n">_man</span> <span class="o">=&gt;</span> <span class="n">wearing</span> <span class="o">=&gt;</span> <span class="mi">3</span><span class="n">_jacket</span><span class="p">;</span> <span class="n">score</span><span class="p">:</span> <span class="mf">0.3942137360572815</span>
+<span class="n">rel_labels</span> <span class="mi">5</span><span class="p">:</span> <span class="mi">6</span><span class="n">_man</span> <span class="o">=&gt;</span> <span class="n">on</span> <span class="o">=&gt;</span> <span class="mi">9</span><span class="n">_sidewalk</span><span class="p">;</span> <span class="n">score</span><span class="p">:</span> <span class="mf">0.018205227330327034</span>
+<span class="n">rel_labels</span> <span class="mi">6</span><span class="p">:</span> <span class="mi">1</span><span class="n">_man</span> <span class="o">=&gt;</span> <span class="n">on</span> <span class="o">=&gt;</span> <span class="mi">9</span><span class="n">_sidewalk</span><span class="p">;</span> <span class="n">score</span><span class="p">:</span> <span class="mf">0.013966969214379787</span>
+<span class="n">rel_labels</span> <span class="mi">7</span><span class="p">:</span> <span class="mi">2</span><span class="n">_tree</span> <span class="o">=&gt;</span> <span class="n">on</span> <span class="o">=&gt;</span> <span class="mi">9</span><span class="n">_sidewalk</span><span class="p">;</span> <span class="n">score</span><span class="p">:</span> <span class="mf">0.008086176589131355</span>
+<span class="n">rel_labels</span> <span class="mi">8</span><span class="p">:</span> <span class="mi">5</span><span class="n">_pant</span> <span class="o">=&gt;</span> <span class="n">on</span> <span class="o">=&gt;</span> <span class="mi">6</span><span class="n">_man</span><span class="p">;</span> <span class="n">score</span><span class="p">:</span> <span class="mf">0.0014106290182098746</span>
+<span class="n">rel_labels</span> <span class="mi">9</span><span class="p">:</span> <span class="mi">11</span><span class="n">_pant</span> <span class="o">=&gt;</span> <span class="n">on</span> <span class="o">=&gt;</span> <span class="mi">1</span><span class="n">_man</span><span class="p">;</span> <span class="n">score</span><span class="p">:</span> <span class="mf">0.0011337836040183902</span>
+<span class="n">rel_labels</span> <span class="mi">10</span><span class="p">:</span> <span class="mi">8</span><span class="n">_shirt</span> <span class="o">=&gt;</span> <span class="n">on</span> <span class="o">=&gt;</span> <span class="mi">6</span><span class="n">_man</span><span class="p">;</span> <span class="n">score</span><span class="p">:</span> <span class="mf">0.0011065977159887552</span>
+<span class="n">rel_labels</span> <span class="mi">11</span><span class="p">:</span> <span class="mi">3</span><span class="n">_jacket</span> <span class="o">=&gt;</span> <span class="n">on</span> <span class="o">=&gt;</span> <span class="mi">6</span><span class="n">_man</span><span class="p">;</span> <span class="n">score</span><span class="p">:</span> <span class="mf">0.000999525422230363</span>
+<span class="n">rel_labels</span> <span class="mi">12</span><span class="p">:</span> <span class="mi">0</span><span class="n">_car</span> <span class="o">=&gt;</span> <span class="n">on</span> <span class="o">=&gt;</span> <span class="mi">9</span><span class="n">_sidewalk</span><span class="p">;</span> <span class="n">score</span><span class="p">:</span> <span class="mf">0.0007585316780023277</span>
+<span class="n">rel_labels</span> <span class="mi">13</span><span class="p">:</span> <span class="mi">4</span><span class="n">_car</span> <span class="o">=&gt;</span> <span class="n">on</span> <span class="o">=&gt;</span> <span class="mi">9</span><span class="n">_sidewalk</span><span class="p">;</span> <span class="n">score</span><span class="p">:</span> <span class="mf">0.0005682203336618841</span>
+<span class="n">rel_labels</span> <span class="mi">14</span><span class="p">:</span> <span class="mi">7</span><span class="n">_jacket</span> <span class="o">=&gt;</span> <span class="n">on</span> <span class="o">=&gt;</span> <span class="mi">1</span><span class="n">_man</span><span class="p">;</span> <span class="n">score</span><span class="p">:</span> <span class="mf">0.00041690803482197225</span>
+<span class="n">rel_labels</span> <span class="mi">15</span><span class="p">:</span> <span class="mi">14</span><span class="n">_pole</span> <span class="o">=&gt;</span> <span class="n">on</span> <span class="o">=&gt;</span> <span class="mi">9</span><span class="n">_sidewalk</span><span class="p">;</span> <span class="n">score</span><span class="p">:</span> <span class="mf">0.0004162817494943738</span>
+<span class="n">rel_labels</span> <span class="mi">16</span><span class="p">:</span> <span class="mi">10</span><span class="n">_tree</span> <span class="o">=&gt;</span> <span class="n">on</span> <span class="o">=&gt;</span> <span class="mi">9</span><span class="n">_sidewalk</span><span class="p">;</span> <span class="n">score</span><span class="p">:</span> <span class="mf">0.00033939923741854727</span>
+<span class="n">rel_labels</span> <span class="mi">17</span><span class="p">:</span> <span class="mi">6</span><span class="n">_man</span> <span class="o">=&gt;</span> <span class="n">wearing</span> <span class="o">=&gt;</span> <span class="mi">11</span><span class="n">_pant</span><span class="p">;</span> <span class="n">score</span><span class="p">:</span> <span class="mf">0.00023455456539522856</span>
+<span class="n">rel_labels</span> <span class="mi">18</span><span class="p">:</span> <span class="mi">13</span><span class="n">_bike</span> <span class="o">=&gt;</span> <span class="n">on</span> <span class="o">=&gt;</span> <span class="mi">9</span><span class="n">_sidewalk</span><span class="p">;</span> <span class="n">score</span><span class="p">:</span> <span class="mf">0.0001507956621935591</span>
+<span class="n">rel_labels</span> <span class="mi">19</span><span class="p">:</span> <span class="mi">1</span><span class="n">_man</span> <span class="o">=&gt;</span> <span class="n">wearing</span> <span class="o">=&gt;</span> <span class="mi">5</span><span class="n">_pant</span><span class="p">;</span> <span class="n">score</span><span class="p">:</span> <span class="mf">0.0001326186757069081</span>
+
+
+<span class="o">**</span> <span class="n">Our</span> <span class="n">total</span> <span class="n">direct</span> <span class="n">effect</span> <span class="n">casuality</span> <span class="n">estimation</span> <span class="o">**</span> 
+
+<span class="o">**************************************************</span>
+<span class="n">rel_labels</span> <span class="mi">0</span><span class="p">:</span> <span class="mi">6</span><span class="n">_man</span> <span class="o">=&gt;</span> <span class="n">walking</span> <span class="n">on</span> <span class="o">=&gt;</span> <span class="mi">9</span><span class="n">_sidewalk</span><span class="p">;</span> <span class="n">score</span><span class="p">:</span> <span class="mf">0.8613027930259705</span>
+<span class="n">rel_labels</span> <span class="mi">1</span><span class="p">:</span> <span class="mi">1</span><span class="n">_man</span> <span class="o">=&gt;</span> <span class="n">walking</span> <span class="n">on</span> <span class="o">=&gt;</span> <span class="mi">9</span><span class="n">_sidewalk</span><span class="p">;</span> <span class="n">score</span><span class="p">:</span> <span class="mf">0.8524761199951172</span>
+<span class="n">rel_labels</span> <span class="mi">2</span><span class="p">:</span> <span class="mi">12</span><span class="n">_building</span> <span class="o">=&gt;</span> <span class="n">behind</span> <span class="o">=&gt;</span> <span class="mi">6</span><span class="n">_man</span><span class="p">;</span> <span class="n">score</span><span class="p">:</span> <span class="mf">0.7995131611824036</span>
+<span class="n">rel_labels</span> <span class="mi">3</span><span class="p">:</span> <span class="mi">10</span><span class="n">_tree</span> <span class="o">=&gt;</span> <span class="n">behind</span> <span class="o">=&gt;</span> <span class="mi">1</span><span class="n">_man</span><span class="p">;</span> <span class="n">score</span><span class="p">:</span> <span class="mf">0.7729325294494629</span>
+<span class="n">rel_labels</span> <span class="mi">4</span><span class="p">:</span> <span class="mi">10</span><span class="n">_tree</span> <span class="o">=&gt;</span> <span class="n">behind</span> <span class="o">=&gt;</span> <span class="mi">6</span><span class="n">_man</span><span class="p">;</span> <span class="n">score</span><span class="p">:</span> <span class="mf">0.7706252932548523</span>
+<span class="n">rel_labels</span> <span class="mi">5</span><span class="p">:</span> <span class="mi">12</span><span class="n">_building</span> <span class="o">=&gt;</span> <span class="n">behind</span> <span class="o">=&gt;</span> <span class="mi">1</span><span class="n">_man</span><span class="p">;</span> <span class="n">score</span><span class="p">:</span> <span class="mf">0.7091185450553894</span>
+<span class="n">rel_labels</span> <span class="mi">6</span><span class="p">:</span> <span class="mi">1</span><span class="n">_man</span> <span class="o">=&gt;</span> <span class="n">wearing</span> <span class="o">=&gt;</span> <span class="mi">5</span><span class="n">_pant</span><span class="p">;</span> <span class="n">score</span><span class="p">:</span> <span class="mf">0.7085047960281372</span>
+<span class="n">rel_labels</span> <span class="mi">7</span><span class="p">:</span> <span class="mi">6</span><span class="n">_man</span> <span class="o">=&gt;</span> <span class="n">wearing</span> <span class="o">=&gt;</span> <span class="mi">11</span><span class="n">_pant</span><span class="p">;</span> <span class="n">score</span><span class="p">:</span> <span class="mf">0.6957372426986694</span>
+<span class="n">rel_labels</span> <span class="mi">8</span><span class="p">:</span> <span class="mi">6</span><span class="n">_man</span> <span class="o">=&gt;</span> <span class="n">wearing</span> <span class="o">=&gt;</span> <span class="mi">7</span><span class="n">_jacket</span><span class="p">;</span> <span class="n">score</span><span class="p">:</span> <span class="mf">0.6753518581390381</span>
+<span class="n">rel_labels</span> <span class="mi">9</span><span class="p">:</span> <span class="mi">1</span><span class="n">_man</span> <span class="o">=&gt;</span> <span class="n">wearing</span> <span class="o">=&gt;</span> <span class="mi">8</span><span class="n">_shirt</span><span class="p">;</span> <span class="n">score</span><span class="p">:</span> <span class="mf">0.655705988407135</span>
+<span class="n">rel_labels</span> <span class="mi">10</span><span class="p">:</span> <span class="mi">1</span><span class="n">_man</span> <span class="o">=&gt;</span> <span class="n">wearing</span> <span class="o">=&gt;</span> <span class="mi">3</span><span class="n">_jacket</span><span class="p">;</span> <span class="n">score</span><span class="p">:</span> <span class="mf">0.6509902477264404</span>
+<span class="n">rel_labels</span> <span class="mi">11</span><span class="p">:</span> <span class="mi">4</span><span class="n">_car</span> <span class="o">=&gt;</span> <span class="n">behind</span> <span class="o">=&gt;</span> <span class="mi">6</span><span class="n">_man</span><span class="p">;</span> <span class="n">score</span><span class="p">:</span> <span class="mf">0.6431631445884705</span>
+<span class="n">rel_labels</span> <span class="mi">12</span><span class="p">:</span> <span class="mi">1</span><span class="n">_man</span> <span class="o">=&gt;</span> <span class="n">watching</span> <span class="o">=&gt;</span> <span class="mi">6</span><span class="n">_man</span><span class="p">;</span> <span class="n">score</span><span class="p">:</span> <span class="mf">0.634941041469574</span>
+<span class="n">rel_labels</span> <span class="mi">13</span><span class="p">:</span> <span class="mi">0</span><span class="n">_car</span> <span class="o">=&gt;</span> <span class="n">parked</span> <span class="n">on</span> <span class="o">=&gt;</span> <span class="mi">9</span><span class="n">_sidewalk</span><span class="p">;</span> <span class="n">score</span><span class="p">:</span> <span class="mf">0.6287247538566589</span>
+<span class="n">rel_labels</span> <span class="mi">14</span><span class="p">:</span> <span class="mi">4</span><span class="n">_car</span> <span class="o">=&gt;</span> <span class="n">behind</span> <span class="o">=&gt;</span> <span class="mi">1</span><span class="n">_man</span><span class="p">;</span> <span class="n">score</span><span class="p">:</span> <span class="mf">0.6216800212860107</span>
+<span class="n">rel_labels</span> <span class="mi">15</span><span class="p">:</span> <span class="mi">1</span><span class="n">_man</span> <span class="o">=&gt;</span> <span class="n">wearing</span> <span class="o">=&gt;</span> <span class="mi">7</span><span class="n">_jacket</span><span class="p">;</span> <span class="n">score</span><span class="p">:</span> <span class="mf">0.6163495182991028</span>
+<span class="n">rel_labels</span> <span class="mi">16</span><span class="p">:</span> <span class="mi">1</span><span class="n">_man</span> <span class="o">=&gt;</span> <span class="n">wearing</span> <span class="o">=&gt;</span> <span class="mi">11</span><span class="n">_pant</span><span class="p">;</span> <span class="n">score</span><span class="p">:</span> <span class="mf">0.6136407852172852</span>
+<span class="n">rel_labels</span> <span class="mi">17</span><span class="p">:</span> <span class="mi">6</span><span class="n">_man</span> <span class="o">=&gt;</span> <span class="n">wearing</span> <span class="o">=&gt;</span> <span class="mi">5</span><span class="n">_pant</span><span class="p">;</span> <span class="n">score</span><span class="p">:</span> <span class="mf">0.5991166830062866</span>
+<span class="n">rel_labels</span> <span class="mi">18</span><span class="p">:</span> <span class="mi">4</span><span class="n">_car</span> <span class="o">=&gt;</span> <span class="n">parked</span> <span class="n">on</span> <span class="o">=&gt;</span> <span class="mi">9</span><span class="n">_sidewalk</span><span class="p">;</span> <span class="n">score</span><span class="p">:</span> <span class="mf">0.5979422926902771</span>
+<span class="n">rel_labels</span> <span class="mi">19</span><span class="p">:</span> <span class="mi">6</span><span class="n">_man</span> <span class="o">=&gt;</span> <span class="n">wearing</span> <span class="o">=&gt;</span> <span class="mi">3</span><span class="n">_jacket</span><span class="p">;</span> <span class="n">score</span><span class="p">:</span> <span class="mf">0.5857774019241333</span>
+
+</code></pre></div></div>
+
+<p>We can see that object relationships discovered by normal argmax methods has two major drawbacks:</p>
+
+<p>(1) The final outcome is baised towards the relationship that has large portion in the human annotations, such as <code class="language-plaintext highlighter-rouge">wearing</code> and <code class="language-plaintext highlighter-rouge">on</code>.
+That is to say, the outcome is overfitted to the training set.</p>
+
+<p>(2) Some wired relationships do exist, such as <code class="language-plaintext highlighter-rouge">7_jacket =&gt; on =&gt; 1_man</code>.</p>
+
+<p>However, with our casual model, we can have two major merits:</p>
+
+<p>(1) The casual relationships are more diverse, such as <code class="language-plaintext highlighter-rouge">10_tree =&gt; behind =&gt; 1_man</code>, <code class="language-plaintext highlighter-rouge">4_car =&gt; parked on =&gt; 9_sidewalk</code>, <code class="language-plaintext highlighter-rouge">1_man =&gt; watching =&gt; 6_man</code>.</p>
+
+<p>(2) Object relationships are much more logical.</p>
+
+<p>The above result only reflects the causal relationships within the single image. To get the average performance of total direct effect, we use mean Recall@K (<strong>mR@K</strong>) as the evaluation metric, where K is number of relationships that is predicted.</p>
+
+<table>
+  <thead>
+    <tr>
+      <th style="text-align: left">Metro</th>
+      <th style="text-align: center">mR@20</th>
+      <th style="text-align: center">mR50</th>
+      <th style="text-align: center">mR100</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td style="text-align: left">Baseline</td>
+      <td style="text-align: center">4.36</td>
+      <td style="text-align: center">5.82</td>
+      <td style="text-align: center">7.08</td>
+    </tr>
+    <tr>
+      <td style="text-align: left">TDE</td>
+      <td style="text-align: center">6.55</td>
+      <td style="text-align: center">8.96</td>
+      <td style="text-align: center">10.98</td>
+    </tr>
+  </tbody>
+</table>
+
+<p>The larger mR@K is, the better performance the scene graph generation task gains. Quantative results again demonstrate the effectiveness of casuality estimation using total direct effect.</p>
+
+<h3 id="appendix">Appendix</h3>
+
+<p>Other examples in scene graph generation:</p>
+
+<div class="row justify-content-sm-center">
+    <div class="col-sm-0 mt-0 mt-md-0">
+<!-- <div class="row mt-3">
+    <div class="col-sm mt-3 mt-md-0"> -->
+  <!-- <div class="row">
+    <div class="col one"> -->
+        <figure>
+
+  <picture>
+    
+    <source class="responsive-img-srcset" media="(max-width: 480px)" srcset="/~mucai/assets/img/4_test-480.webp" />
+    <source class="responsive-img-srcset" media="(max-width: 800px)" srcset="/~mucai/assets/img/4_test-800.webp" />
+    <source class="responsive-img-srcset" media="(max-width: 1400px)" srcset="/~mucai/assets/img/4_test-1400.webp" />
+    
+
+    <!-- Fallback to the original file -->
+    <img src="/~mucai/assets/img/4_test.jpg" class="img-fluid rounded z-depth-1" width="auto" height="auto" data-zoomable="" onerror="this.onerror=null; $('.responsive-img-srcset').remove();" />
+
+  </picture>
+
+</figure>
+
+    </div>
+</div>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="o">**</span> <span class="n">Normal</span> <span class="p">(</span><span class="n">Vanilia</span><span class="p">)</span> <span class="n">argmax</span> <span class="n">estimation</span> <span class="o">**</span> 
+
+<span class="o">**************************************************</span>
+<span class="n">rel_labels</span> <span class="mi">0</span><span class="p">:</span> <span class="mi">5</span><span class="n">_window</span> <span class="o">=&gt;</span> <span class="ow">in</span> <span class="o">=&gt;</span> <span class="mi">14</span><span class="n">_room</span><span class="p">;</span> <span class="n">score</span><span class="p">:</span> <span class="mf">0.025266632437705994</span>
+<span class="n">rel_labels</span> <span class="mi">1</span><span class="p">:</span> <span class="mi">1</span><span class="n">_door</span> <span class="o">=&gt;</span> <span class="ow">in</span> <span class="o">=&gt;</span> <span class="mi">14</span><span class="n">_room</span><span class="p">;</span> <span class="n">score</span><span class="p">:</span> <span class="mf">0.009757161140441895</span>
+<span class="n">rel_labels</span> <span class="mi">2</span><span class="p">:</span> <span class="mi">2</span><span class="n">_desk</span> <span class="o">=&gt;</span> <span class="ow">in</span> <span class="o">=&gt;</span> <span class="mi">14</span><span class="n">_room</span><span class="p">;</span> <span class="n">score</span><span class="p">:</span> <span class="mf">0.009384681470692158</span>
+<span class="n">rel_labels</span> <span class="mi">3</span><span class="p">:</span> <span class="mi">0</span><span class="n">_chair</span> <span class="o">=&gt;</span> <span class="ow">in</span> <span class="o">=&gt;</span> <span class="mi">14</span><span class="n">_room</span><span class="p">;</span> <span class="n">score</span><span class="p">:</span> <span class="mf">0.007233844138681889</span>
+<span class="n">rel_labels</span> <span class="mi">4</span><span class="p">:</span> <span class="mi">0</span><span class="n">_chair</span> <span class="o">=&gt;</span> <span class="n">near</span> <span class="o">=&gt;</span> <span class="mi">2</span><span class="n">_desk</span><span class="p">;</span> <span class="n">score</span><span class="p">:</span> <span class="mf">0.0034478071611374617</span>
+<span class="n">rel_labels</span> <span class="mi">5</span><span class="p">:</span> <span class="mi">5</span><span class="n">_window</span> <span class="o">=&gt;</span> <span class="n">on</span> <span class="o">=&gt;</span> <span class="mi">1</span><span class="n">_door</span><span class="p">;</span> <span class="n">score</span><span class="p">:</span> <span class="mf">0.0008813929744064808</span>
+<span class="n">rel_labels</span> <span class="mi">6</span><span class="p">:</span> <span class="mi">4</span><span class="n">_light</span> <span class="o">=&gt;</span> <span class="n">on</span> <span class="o">=&gt;</span> <span class="mi">1</span><span class="n">_door</span><span class="p">;</span> <span class="n">score</span><span class="p">:</span> <span class="mf">0.0007640126277692616</span>
+<span class="n">rel_labels</span> <span class="mi">7</span><span class="p">:</span> <span class="mi">4</span><span class="n">_light</span> <span class="o">=&gt;</span> <span class="ow">in</span> <span class="o">=&gt;</span> <span class="mi">14</span><span class="n">_room</span><span class="p">;</span> <span class="n">score</span><span class="p">:</span> <span class="mf">0.0004628885071724653</span>
+<span class="n">rel_labels</span> <span class="mi">8</span><span class="p">:</span> <span class="mi">1</span><span class="n">_door</span> <span class="o">=&gt;</span> <span class="n">has</span> <span class="o">=&gt;</span> <span class="mi">5</span><span class="n">_window</span><span class="p">;</span> <span class="n">score</span><span class="p">:</span> <span class="mf">0.00039950464270077646</span>
+<span class="n">rel_labels</span> <span class="mi">9</span><span class="p">:</span> <span class="mi">12</span><span class="n">_box</span> <span class="o">=&gt;</span> <span class="ow">in</span> <span class="o">=&gt;</span> <span class="mi">14</span><span class="n">_room</span><span class="p">;</span> <span class="n">score</span><span class="p">:</span> <span class="mf">0.0002094725496135652</span>
+<span class="n">rel_labels</span> <span class="mi">10</span><span class="p">:</span> <span class="mi">7</span><span class="n">_paper</span> <span class="o">=&gt;</span> <span class="n">on</span> <span class="o">=&gt;</span> <span class="mi">2</span><span class="n">_desk</span><span class="p">;</span> <span class="n">score</span><span class="p">:</span> <span class="mf">0.0001718419516691938</span>
+<span class="n">rel_labels</span> <span class="mi">11</span><span class="p">:</span> <span class="mi">3</span><span class="n">_book</span> <span class="o">=&gt;</span> <span class="n">on</span> <span class="o">=&gt;</span> <span class="mi">2</span><span class="n">_desk</span><span class="p">;</span> <span class="n">score</span><span class="p">:</span> <span class="mf">5.526307722902857e-05</span>
+<span class="n">rel_labels</span> <span class="mi">12</span><span class="p">:</span> <span class="mi">10</span><span class="n">_book</span> <span class="o">=&gt;</span> <span class="n">on</span> <span class="o">=&gt;</span> <span class="mi">2</span><span class="n">_desk</span><span class="p">;</span> <span class="n">score</span><span class="p">:</span> <span class="mf">4.91523023811169e-05</span>
+<span class="n">rel_labels</span> <span class="mi">13</span><span class="p">:</span> <span class="mi">11</span><span class="n">_book</span> <span class="o">=&gt;</span> <span class="ow">in</span> <span class="o">=&gt;</span> <span class="mi">14</span><span class="n">_room</span><span class="p">;</span> <span class="n">score</span><span class="p">:</span> <span class="mf">4.17599621869158e-05</span>
+<span class="n">rel_labels</span> <span class="mi">14</span><span class="p">:</span> <span class="mi">13</span><span class="n">_book</span> <span class="o">=&gt;</span> <span class="ow">in</span> <span class="o">=&gt;</span> <span class="mi">14</span><span class="n">_room</span><span class="p">;</span> <span class="n">score</span><span class="p">:</span> <span class="mf">2.9153519790270366e-05</span>
+<span class="n">rel_labels</span> <span class="mi">15</span><span class="p">:</span> <span class="mi">8</span><span class="n">_bag</span> <span class="o">=&gt;</span> <span class="n">on</span> <span class="o">=&gt;</span> <span class="mi">2</span><span class="n">_desk</span><span class="p">;</span> <span class="n">score</span><span class="p">:</span> <span class="mf">2.740809395618271e-05</span>
+<span class="n">rel_labels</span> <span class="mi">16</span><span class="p">:</span> <span class="mi">9</span><span class="n">_book</span> <span class="o">=&gt;</span> <span class="n">on</span> <span class="o">=&gt;</span> <span class="mi">2</span><span class="n">_desk</span><span class="p">;</span> <span class="n">score</span><span class="p">:</span> <span class="mf">2.630994094943162e-05</span>
+<span class="n">rel_labels</span> <span class="mi">17</span><span class="p">:</span> <span class="mi">6</span><span class="n">_book</span> <span class="o">=&gt;</span> <span class="ow">in</span> <span class="o">=&gt;</span> <span class="mi">14</span><span class="n">_room</span><span class="p">;</span> <span class="n">score</span><span class="p">:</span> <span class="mf">1.9420620446908288e-05</span>
+<span class="n">rel_labels</span> <span class="mi">18</span><span class="p">:</span> <span class="mi">9</span><span class="n">_book</span> <span class="o">=&gt;</span> <span class="ow">in</span> <span class="o">=&gt;</span> <span class="mi">14</span><span class="n">_room</span><span class="p">;</span> <span class="n">score</span><span class="p">:</span> <span class="mf">1.8823122445610352e-05</span>
+<span class="n">rel_labels</span> <span class="mi">19</span><span class="p">:</span> <span class="mi">10</span><span class="n">_book</span> <span class="o">=&gt;</span> <span class="ow">in</span> <span class="o">=&gt;</span> <span class="mi">14</span><span class="n">_room</span><span class="p">;</span> <span class="n">score</span><span class="p">:</span> <span class="mf">1.7273092453251593e-05</span>
+
+
+<span class="o">**</span> <span class="n">Our</span> <span class="n">total</span> <span class="n">direct</span> <span class="n">effect</span> <span class="n">casuality</span> <span class="n">estimation</span> <span class="o">**</span> 
+
+<span class="o">**************************************************</span>
+<span class="n">rel_labels</span> <span class="mi">0</span><span class="p">:</span> <span class="mi">5</span><span class="n">_window</span> <span class="o">=&gt;</span> <span class="ow">in</span> <span class="o">=&gt;</span> <span class="mi">14</span><span class="n">_room</span><span class="p">;</span> <span class="n">score</span><span class="p">:</span> <span class="mf">0.9316350817680359</span>
+<span class="n">rel_labels</span> <span class="mi">1</span><span class="p">:</span> <span class="mi">2</span><span class="n">_desk</span> <span class="o">=&gt;</span> <span class="ow">in</span> <span class="o">=&gt;</span> <span class="mi">14</span><span class="n">_room</span><span class="p">;</span> <span class="n">score</span><span class="p">:</span> <span class="mf">0.9267702102661133</span>
+<span class="n">rel_labels</span> <span class="mi">2</span><span class="p">:</span> <span class="mi">1</span><span class="n">_door</span> <span class="o">=&gt;</span> <span class="ow">in</span> <span class="o">=&gt;</span> <span class="mi">14</span><span class="n">_room</span><span class="p">;</span> <span class="n">score</span><span class="p">:</span> <span class="mf">0.868871808052063</span>
+<span class="n">rel_labels</span> <span class="mi">3</span><span class="p">:</span> <span class="mi">0</span><span class="n">_chair</span> <span class="o">=&gt;</span> <span class="ow">in</span> <span class="o">=&gt;</span> <span class="mi">14</span><span class="n">_room</span><span class="p">;</span> <span class="n">score</span><span class="p">:</span> <span class="mf">0.8664298057556152</span>
+<span class="n">rel_labels</span> <span class="mi">4</span><span class="p">:</span> <span class="mi">12</span><span class="n">_box</span> <span class="o">=&gt;</span> <span class="ow">in</span> <span class="o">=&gt;</span> <span class="mi">14</span><span class="n">_room</span><span class="p">;</span> <span class="n">score</span><span class="p">:</span> <span class="mf">0.8048514723777771</span>
+<span class="n">rel_labels</span> <span class="mi">5</span><span class="p">:</span> <span class="mi">0</span><span class="n">_chair</span> <span class="o">=&gt;</span> <span class="n">under</span> <span class="o">=&gt;</span> <span class="mi">4</span><span class="n">_light</span><span class="p">;</span> <span class="n">score</span><span class="p">:</span> <span class="mf">0.7975059747695923</span>
+<span class="n">rel_labels</span> <span class="mi">6</span><span class="p">:</span> <span class="mi">2</span><span class="n">_desk</span> <span class="o">=&gt;</span> <span class="n">under</span> <span class="o">=&gt;</span> <span class="mi">4</span><span class="n">_light</span><span class="p">;</span> <span class="n">score</span><span class="p">:</span> <span class="mf">0.7918913960456848</span>
+<span class="n">rel_labels</span> <span class="mi">7</span><span class="p">:</span> <span class="mi">13</span><span class="n">_book</span> <span class="o">=&gt;</span> <span class="ow">in</span> <span class="o">=&gt;</span> <span class="mi">14</span><span class="n">_room</span><span class="p">;</span> <span class="n">score</span><span class="p">:</span> <span class="mf">0.7865951061248779</span>
+<span class="n">rel_labels</span> <span class="mi">8</span><span class="p">:</span> <span class="mi">8</span><span class="n">_bag</span> <span class="o">=&gt;</span> <span class="ow">in</span> <span class="o">=&gt;</span> <span class="mi">14</span><span class="n">_room</span><span class="p">;</span> <span class="n">score</span><span class="p">:</span> <span class="mf">0.7771527171134949</span>
+<span class="n">rel_labels</span> <span class="mi">9</span><span class="p">:</span> <span class="mi">7</span><span class="n">_paper</span> <span class="o">=&gt;</span> <span class="ow">in</span> <span class="o">=&gt;</span> <span class="mi">14</span><span class="n">_room</span><span class="p">;</span> <span class="n">score</span><span class="p">:</span> <span class="mf">0.7696521878242493</span>
+<span class="n">rel_labels</span> <span class="mi">10</span><span class="p">:</span> <span class="mi">0</span><span class="n">_chair</span> <span class="o">=&gt;</span> <span class="n">at</span> <span class="o">=&gt;</span> <span class="mi">2</span><span class="n">_desk</span><span class="p">;</span> <span class="n">score</span><span class="p">:</span> <span class="mf">0.7678285241127014</span>
+<span class="n">rel_labels</span> <span class="mi">11</span><span class="p">:</span> <span class="mi">6</span><span class="n">_book</span> <span class="o">=&gt;</span> <span class="ow">in</span> <span class="o">=&gt;</span> <span class="mi">14</span><span class="n">_room</span><span class="p">;</span> <span class="n">score</span><span class="p">:</span> <span class="mf">0.7667400240898132</span>
+<span class="n">rel_labels</span> <span class="mi">12</span><span class="p">:</span> <span class="mi">10</span><span class="n">_book</span> <span class="o">=&gt;</span> <span class="ow">in</span> <span class="o">=&gt;</span> <span class="mi">14</span><span class="n">_room</span><span class="p">;</span> <span class="n">score</span><span class="p">:</span> <span class="mf">0.7562098503112793</span>
+<span class="n">rel_labels</span> <span class="mi">13</span><span class="p">:</span> <span class="mi">9</span><span class="n">_book</span> <span class="o">=&gt;</span> <span class="ow">in</span> <span class="o">=&gt;</span> <span class="mi">14</span><span class="n">_room</span><span class="p">;</span> <span class="n">score</span><span class="p">:</span> <span class="mf">0.755908727645874</span>
+<span class="n">rel_labels</span> <span class="mi">14</span><span class="p">:</span> <span class="mi">3</span><span class="n">_book</span> <span class="o">=&gt;</span> <span class="ow">in</span> <span class="o">=&gt;</span> <span class="mi">14</span><span class="n">_room</span><span class="p">;</span> <span class="n">score</span><span class="p">:</span> <span class="mf">0.7499572038650513</span>
+<span class="n">rel_labels</span> <span class="mi">15</span><span class="p">:</span> <span class="mi">11</span><span class="n">_book</span> <span class="o">=&gt;</span> <span class="ow">in</span> <span class="o">=&gt;</span> <span class="mi">14</span><span class="n">_room</span><span class="p">;</span> <span class="n">score</span><span class="p">:</span> <span class="mf">0.7362657785415649</span>
+<span class="n">rel_labels</span> <span class="mi">16</span><span class="p">:</span> <span class="mi">4</span><span class="n">_light</span> <span class="o">=&gt;</span> <span class="n">above</span> <span class="o">=&gt;</span> <span class="mi">2</span><span class="n">_desk</span><span class="p">;</span> <span class="n">score</span><span class="p">:</span> <span class="mf">0.6984441876411438</span>
+<span class="n">rel_labels</span> <span class="mi">17</span><span class="p">:</span> <span class="mi">4</span><span class="n">_light</span> <span class="o">=&gt;</span> <span class="n">above</span> <span class="o">=&gt;</span> <span class="mi">0</span><span class="n">_chair</span><span class="p">;</span> <span class="n">score</span><span class="p">:</span> <span class="mf">0.6705607175827026</span>
+<span class="n">rel_labels</span> <span class="mi">18</span><span class="p">:</span> <span class="mi">14</span><span class="n">_room</span> <span class="o">=&gt;</span> <span class="n">has</span> <span class="o">=&gt;</span> <span class="mi">5</span><span class="n">_window</span><span class="p">;</span> <span class="n">score</span><span class="p">:</span> <span class="mf">0.6420085430145264</span>
+<span class="n">rel_labels</span> <span class="mi">19</span><span class="p">:</span> <span class="mi">0</span><span class="n">_chair</span> <span class="o">=&gt;</span> <span class="ow">in</span> <span class="n">front</span> <span class="n">of</span> <span class="o">=&gt;</span> <span class="mi">1</span><span class="n">_door</span><span class="p">;</span> <span class="n">score</span><span class="p">:</span> <span class="mf">0.6367448568344116</span>
+
+</code></pre></div></div>
+
 <hr />
 <h3 id="references">References</h3>
 <hr />
@@ -275,5 +800,8 @@ Therefore, we can say that it has a topological or causal ordering. Three assump
   <li><a name="Ren_et_al_15"></a> <strong>[Ren et al. 2015]</strong>  Ren, Shaoqing, Kaiming He, Ross Girshick, and Jian Sun “<em><a href="https://papers.nips.cc/paper/2015/file/14bfa6bb14875e45bba028a21ed38046-Paper.pdf">Faster r-cnn: Towards real-time object detection with region proposal networks</a></em>”, Advances in neural information processing systems 28 (2015)</li>
   <li><a name="Wang_et_al_20"></a> <strong>[Wang et al. 2020]</strong>  Wang, Tan, Jianqiang Huang, Hanwang Zhang, and Qianru Sun “<em><a href="https://openaccess.thecvf.com/content_CVPR_2020/papers/Wang_Visual_Commonsense_R-CNN_CVPR_2020_paper.pdf">Visual commonsense r-cnn</a></em>”, In Proceedings of the IEEE/CVF Conference on Computer Vision and Pattern Recognition, pp. 10760-10770. 2020</li>
   <li><a name="Tang_et_al_20"></a> <strong>[Tang et al. 2015]</strong>   Tang, Kaihua, Yulei Niu, Jianqiang Huang, Jiaxin Shi, and Hanwang Zhang”<em><a href="https://arxiv.org/abs/2002.11949">Unbiased scene graph generation from biased training</a></em>”, In Proceedings of the IEEE/CVF conference on computer vision and pattern recognition, pp. 3716-3725. 2020</li>
-  <li><a name="VanderWeele_et_al_13"></a> <strong>[VanderWeele et al. 2013]</strong>   VanderWeele, Tyler J “<em><a href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC3563853/">A three-way decomposition of a total effect into direct, indirect, and interactive effects</a></em>“,Epidemiology (Cambridge, Mass.) 24, no. 2 (2013): 224.</li>
+  <li>
+    <p><a name="VanderWeele_et_al_13"></a> <strong>[VanderWeele et al. 2013]</strong>   VanderWeele, Tyler J “<em><a href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC3563853/">A three-way decomposition of a total effect into direct, indirect, and interactive effects</a></em>“,Epidemiology (Cambridge, Mass.) 24, no. 2 (2013): 224.</p>
+  </li>
+  <li><a name="Krishna_et_al_17"></a> <strong>[Krishna et al. 2017]</strong>   Krishna, Ranjay, Yuke Zhu, Oliver Groth, Justin Johnson, Kenji Hata, Joshua Kravitz, Stephanie Chen et al. “<em><a href="https://arxiv.org/abs/1602.07332">Visual genome: Connecting language and vision using crowdsourced dense image annotations</a></em>“,International journal of computer vision, 123(1), 32-73.</li>
 </ul>]]></content><author><name></name></author><category term="vision," /><category term="ML," /><category term="math" /><summary type="html"><![CDATA[UW-Madison 2022Fall MATH888 Project, Mu Cai]]></summary></entry></feed>
